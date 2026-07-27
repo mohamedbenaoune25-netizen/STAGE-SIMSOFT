@@ -1,0 +1,44 @@
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff; /* Light background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensure it's above everything */
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.animated-logo {
+  width: 150px; /* Adjust based on logo size */
+  max-width: 80vw;
+  height: auto;
+  animation: pulseGlow 2s infinite ease-in-out;
+  filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.5));
+}
+
+@keyframes pulseGlow {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.7;
+    filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.3));
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+    filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.8));
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.7;
+    filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.3));
+  }
+}

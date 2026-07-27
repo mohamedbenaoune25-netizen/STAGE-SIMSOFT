@@ -1,0 +1,1009 @@
+<!DOCTYPE html><html class="light" lang="fr"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Hanken+Grotesk:wght@600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        try {
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        "colors": {
+                            "on-secondary": "#ffffff",
+                            "surface-container-lowest": "#ffffff",
+                            "secondary-fixed-dim": "#bfc6dd",
+                            "tertiary": "#c0001a",
+                            "surface": "#fcf9f8",
+                            "primary-fixed": "#b6ebff",
+                            "primary": "#00677f",
+                            "error-container": "#ffdad6",
+                            "tertiary-container": "#ffaca5",
+                            "inverse-primary": "#47d6ff",
+                            "on-tertiary": "#ffffff",
+                            "tertiary-fixed-dim": "#ffb3ad",
+                            "surface-container-high": "#eae7e7",
+                            "on-error": "#ffffff",
+                            "secondary-container": "#dbe2fa",
+                            "on-background": "#1b1c1c",
+                            "on-primary-container": "#00566a",
+                            "error": "#ba1a1a",
+                            "surface-bright": "#fcf9f8",
+                            "on-error-container": "#93000a",
+                            "outline": "#6c797f",
+                            "on-secondary-container": "#5d6478",
+                            "surface-variant": "#e5e2e1",
+                            "surface-container-highest": "#e5e2e1",
+                            "secondary": "#575e72",
+                            "on-surface": "#1b1c1c",
+                            "on-primary-fixed": "#001f28",
+                            "outline-variant": "#bbc9cf",
+                            "primary-fixed-dim": "#47d6ff",
+                            "on-primary-fixed-variant": "#004e60",
+                            "background": "#fcf9f8",
+                            "on-surface-variant": "#3c494e",
+                            "secondary-fixed": "#dbe2fa",
+                            "surface-container-low": "#f6f3f2",
+                            "on-tertiary-fixed-variant": "#930011",
+                            "inverse-surface": "#303030",
+                            "on-secondary-fixed-variant": "#3f4659",
+                            "surface-container": "#f0eded",
+                            "inverse-on-surface": "#f3f0ef",
+                            "surface-dim": "#dcd9d9",
+                            "primary-container": "#00d2ff",
+                            "on-tertiary-fixed": "#410003",
+                            "surface-tint": "#00677f",
+                            "on-secondary-fixed": "#141b2c",
+                            "on-primary": "#ffffff",
+                            "on-tertiary-container": "#a30014",
+                            "text-high-contrast": "#1b1c1c",
+                            "border-grid": "rgba(44, 51, 69, 0.15)"
+                        },
+                        "borderRadius": {
+                            "DEFAULT": "0px",
+                            "lg": "8px",
+                            "xl": "12px",
+                            "full": "9999px"
+                        },
+                        "spacing": {
+                            "margin-desktop": "80px",
+                            "unit": "4px",
+                            "gutter": "32px",
+                            "margin-mobile": "24px",
+                            "grid-line": "1px",
+                            "margin-tablet": "40px"
+                        },
+                        "fontFamily": {
+                            "body-sm": ["Inter"],
+                            "body-md": ["Inter"],
+                            "headline-lg": ["Hanken Grotesk"],
+                            "headline-lg-mobile": ["Hanken Grotesk"],
+                            "label-numeric": ["JetBrains Mono"],
+                            "headline-md": ["Hanken Grotesk"],
+                            "label-caps": ["JetBrains Mono"],
+                            "headline-display": ["Hanken Grotesk"],
+                            "body-lg": ["Inter"]
+                        },
+                        "fontSize": {
+                            "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                            "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                            "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                            "label-numeric": ["13px", {"lineHeight": "16px", "fontWeight": "400"}],
+                            "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                            "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.12em", "fontWeight": "600"}],
+                            "headline-display": ["68px", {"lineHeight": "76px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                        }
+                    },
+                },
+            }
+        } catch (_e) {}
+    </script>
+<style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes slideUpFade {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-entry { animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .stagger-1 { animation-delay: 0.1s; opacity: 0; }
+        .stagger-2 { animation-delay: 0.2s; opacity: 0; }
+        .stagger-3 { animation-delay: 0.3s; opacity: 0; }
+        .hero-mask {
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+        .solution-card-transition {
+            transition: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1), 
+                        transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .solution-trigger {
+            transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+            border-left: 0px solid transparent;
+        }
+        .active-trigger {
+            background-color: #fcf9f8 !important; 
+            border-color: #00677f !important; 
+            border-left: 4px solid #00677f !important;
+        }
+        .active-trigger p:first-child {
+            color: #00677f;
+        }
+        #display-image {
+            transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1), 
+                        opacity 400ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<header class="fixed top-0 w-full z-50 border-b border-border-grid bg-background/95 backdrop-blur-xl">
+<div class="flex justify-between items-center w-full px-margin-desktop h-20">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-primary flex items-center justify-center">
+<span class="text-white font-headline-md font-bold">S</span>
+</div>
+<span class="font-headline-md text-headline-md font-bold tracking-tighter text-text-high-contrast hidden lg:block uppercase">SIMSOFT TECHNOLOGIES</span>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="font-label-caps text-on-surface-variant hover:text-text-high-contrast transition-colors" href="#">Partenaires</a>
+<a class="font-label-caps text-on-surface-variant hover:text-text-high-contrast transition-colors" href="#">À Propos</a>
+<a class="font-label-caps text-on-surface-variant hover:text-text-high-contrast transition-colors" href="#">Produits</a>
+<a class="font-label-caps text-on-surface-variant hover:text-text-high-contrast transition-colors" href="#">Clients</a>
+<a class="font-label-caps text-on-surface-variant hover:text-text-high-contrast transition-colors" href="#">Blogs</a>
+</nav>
+<div class="flex items-center gap-8">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined">light_mode</span>
+</button>
+<button class="bg-primary text-white font-label-caps px-8 py-3 hover:bg-primary/90 transition-all active:scale-95">
+                DÉMARRER
+            </button>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[95vh] flex flex-col justify-center bg-surface-container-lowest overflow-hidden hero-mask border-b border-border-grid reveal-on-scroll active">
+<div class="absolute inset-0 z-0 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-transparent z-10"></div>
+<img alt="Datacenter background" class="w-full h-full object-cover grayscale opacity-20 scale-110 blur-[2px]" src="https://lh3.googleusercontent.com/aida/AP1WRLs-FQUZz2TrJBHTxcS80RqSwvseN1mcxz9_AW8Czxm-OwaaFafrrj7N8PqnSZMPMTO3o81y37UPpLuxQGq2es3RtVsCaJwOCyry4R2CmoG9X037Z_UF5RZjYwuBM1MvZgrYwQEMOhv5no0YhMW3JEsnlekpKk_5pR8dltI7TIjwTgpKRHJtyzRo-fY7ETLICxufNAi5N1dCiVhfbz_G1lUc_6Zv4WLjOmiVKzddTPlEOz7MU4uSJBZY4pg">
+<div class="absolute inset-0 z-20" style="background-image: radial-gradient(circle at 2px 2px, rgba(0,103,127,0.05) 1px, transparent 0); background-size: 40px 40px;"></div>
+</div>
+<div class="px-margin-desktop grid grid-cols-12 gap-gutter items-center relative z-30 py-24 lg:py-0">
+<div class="col-span-12 lg:col-span-7">
+<div class="animate-entry stagger-1">
+<div class="inline-flex items-center gap-4 px-4 py-2 bg-surface-container-high border border-border-grid mb-8">
+<span class="material-symbols-outlined text-primary text-sm">verified_user</span>
+<span class="font-label-caps text-on-surface-variant text-[11px] tracking-widest">INGÉNIERIE DE HAUTE PRÉCISION • DEPUIS 2000</span>
+</div>
+</div>
+<h1 class="font-headline-display text-headline-display text-text-high-contrast mb-8 leading-[0.95] animate-entry stagger-2">
+                    Le Futur de la <br>
+<span class="relative inline-block">
+<span class="relative z-10">Connectivité</span>
+<span class="absolute bottom-4 left-0 w-full h-4 bg-primary-container -z-10 opacity-60"></span>
+</span>
+<span class="text-primary italic">Numérique.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-12 leading-relaxed animate-entry stagger-3">
+                    Architecturer des infrastructures critiques pour les écosystèmes techniques les plus exigeants au monde. Haute densité, latence zéro, intégrité absolue.
+                </p>
+<div class="flex flex-wrap gap-6 mb-16 animate-entry stagger-3">
+<button class="bg-primary text-white px-10 py-5 font-label-caps tracking-widest shadow-xl shadow-primary/20 hover:bg-primary/90 hover:-translate-y-1 transition-all duration-300">
+                        DÉPLOYER LES SYSTÈMES
+                    </button>
+<button class="border border-border-grid bg-white/50 backdrop-blur-sm px-10 py-5 font-label-caps tracking-widest hover:bg-surface-container-high transition-all">
+                        VOIR LES SPÉCS
+                    </button>
+</div>
+<div class="flex items-center gap-10 animate-entry stagger-3 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">security</span>
+<span class="font-label-numeric text-xs font-bold">ISO 27001 CERTIFIED</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">speed</span>
+<span class="font-label-numeric text-xs font-bold">99.99% UPTIME GUARANTEE</span>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-5 relative hidden lg:flex justify-center items-center">
+<div class="relative w-full max-w-md aspect-[3/4] animate-float">
+<div class="relative z-20 w-full h-full bg-surface-container-high border border-border-grid p-2 shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-700 overflow-hidden">
+<img alt="Simsoft interface" class="w-full h-full object-cover grayscale contrast-125" src="https://lh3.googleusercontent.com/aida/AP1WRLv2rTudCBrvJmrkHp3ReyZou4I3qTPBxjl8UebS6ygh_YEeC0D9Yhlfw0SixvDGck2FyIitjCsxdz_5DyfXOCvJ7B6hhfbVoXjT-2BvBldj_YaC5ylHFokf8-UGwPVgSgUk0Q_SDukCs9EvP7sLEgq241IsT-mqZ6sL47gmGkrrdzaXZ9HdWz5JDxS6Rvjzw-g6SUv0ZA3avpWiYPiUl8rU1i8_vBkq0llNWV7syWQN8Teuds7E-1H8-Ag">
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<div class="absolute top-6 left-6 font-label-numeric text-[10px] text-white/50">SYSTEM_AUTH: ACTIVE</div>
+</div>
+<div class="absolute -top-10 -right-10 w-40 h-40 border border-primary/20 -z-10 animate-pulse"></div>
+<div class="absolute -bottom-10 -left-10 w-60 h-60 border border-border-grid -z-10"></div>
+<div class="absolute top-1/2 -left-12 -translate-y-1/2 bg-primary text-white p-6 z-30 shadow-xl">
+<div class="font-label-numeric text-2xl font-bold leading-none">0.2ms</div>
+<div class="font-label-caps text-[10px] mt-1 opacity-80">RÉPONSE EDGE</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Nos Solutions Section -->
+<section class="py-40 bg-background reveal-on-scroll active" id="solutions">
+<div class="px-margin-desktop">
+<div class="max-w-4xl mb-24">
+<h2 class="font-label-caps text-primary mb-6">SERVICES &amp; SYSTÈMES</h2>
+<h3 class="font-headline-lg text-headline-lg text-text-high-contrast mb-6 leading-tight">Un écosystème complet pour votre transformation digitale</h3>
+<p class="font-body-lg text-on-surface-variant max-w-2xl">Depuis plus de deux décennies, Simsoft déploie des solutions logicielles et matérielles de pointe pour synchroniser vos opérations critiques avec une précision absolue.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+<div class="lg:col-span-5 space-y-2">
+<button class="solution-trigger w-full text-left p-6 flex items-center gap-6 border border-border-grid bg-white hover:border-primary transition-all group active-trigger" data-solution="divalto">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container-low text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">business_center</span>
+</div>
+<div class="flex-1">
+<p class="font-headline-md text-lg">Divalto ERP</p>
+<p class="font-body-sm text-on-surface-variant">Gestion PME haute performance</p>
+</div>
+<span class="material-symbols-outlined text-primary-fixed-dim opacity-0 group-[.active-trigger]:opacity-100 transition-opacity">chevron_right</span>
+</button>
+<button class="solution-trigger w-full text-left p-6 flex items-center gap-6 border border-border-grid bg-white hover:border-primary transition-all group" data-solution="wavesoft">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container-low text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">rocket_launch</span>
+</div>
+<div class="flex-1">
+<p class="font-headline-md text-lg">WaveSoft ERP</p>
+<p class="font-body-sm text-on-surface-variant">Agilité et croissance maîtrisée</p>
+</div>
+<span class="material-symbols-outlined text-primary-fixed-dim opacity-0 group-[.active-trigger]:opacity-100 transition-opacity">chevron_right</span>
+</button>
+<button class="solution-trigger w-full text-left p-6 flex items-center gap-6 border border-border-grid bg-white hover:border-primary transition-all group" data-solution="firstparc">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container-low text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">engineering</span>
+</div>
+<div class="flex-1">
+<p class="font-headline-md text-lg">First Parc (GMAO)</p>
+<p class="font-body-sm text-on-surface-variant">Maintenance d'actifs critiques</p>
+</div>
+<span class="material-symbols-outlined text-primary-fixed-dim opacity-0 group-[.active-trigger]:opacity-100 transition-opacity">chevron_right</span>
+</button>
+<button class="solution-trigger w-full text-left p-6 flex items-center gap-6 border border-border-grid bg-white hover:border-primary transition-all group" data-solution="dev">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container-low text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">code</span>
+</div>
+<div class="flex-1">
+<p class="font-headline-md text-lg">Développement spécifique</p>
+<p class="font-body-sm text-on-surface-variant">Solutions sur mesure cloud-native</p>
+</div>
+<span class="material-symbols-outlined text-primary-fixed-dim opacity-0 group-[.active-trigger]:opacity-100 transition-opacity">chevron_right</span>
+</button>
+<button class="solution-trigger w-full text-left p-6 flex items-center gap-6 border border-border-grid bg-white hover:border-primary transition-all group" data-solution="quorion">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container-low text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">point_of_sale</span>
+</div>
+<div class="flex-1">
+<p class="font-headline-md text-lg">Solutions QUORiON</p>
+<p class="font-body-sm text-on-surface-variant">Gestion de points de vente</p>
+</div>
+<span class="material-symbols-outlined text-primary-fixed-dim opacity-0 group-[.active-trigger]:opacity-100 transition-opacity">chevron_right</span>
+</button>
+<button class="solution-trigger w-full text-left p-6 flex items-center gap-6 border border-border-grid bg-white hover:border-primary transition-all group" data-solution="balances">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container-low text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">scale</span>
+</div>
+<div class="flex-1">
+<p class="font-headline-md text-lg">Balances électroniques</p>
+<p class="font-body-sm text-on-surface-variant">Précision et métrologie légale</p>
+</div>
+<span class="material-symbols-outlined text-primary-fixed-dim opacity-0 group-[.active-trigger]:opacity-100 transition-opacity">chevron_right</span>
+</button>
+<button class="solution-trigger w-full text-left p-6 flex items-center gap-6 border border-border-grid bg-white hover:border-primary transition-all group" data-solution="support">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container-low text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">support_agent</span>
+</div>
+<div class="flex-1">
+<p class="font-headline-md text-lg">Assistance &amp; Support</p>
+<p class="font-body-sm text-on-surface-variant">Expertise technique 24/7</p>
+</div>
+<span class="material-symbols-outlined text-primary-fixed-dim opacity-0 group-[.active-trigger]:opacity-100 transition-opacity">chevron_right</span>
+</button>
+</div>
+<div class="lg:col-span-7 h-full">
+<div class="relative bg-white border border-border-grid rounded-lg shadow-2xl overflow-hidden h-full min-h-[500px] flex flex-col solution-card-transition" id="solution-display">
+<div class="relative h-64 overflow-hidden">
+<img alt="Solution Illustration" class="w-full h-full object-cover grayscale contrast-125" id="display-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbcUtcaVNU4QslU0Ls91a_0REjp6lqpTmnFWZWx66NPMOS7TcajOrHqq94Pv_huWNdXGL4KnkkCe-xEWDlXP1CvIYqO9QAGnQxUrNFU7Ya0jLtxjOcqccpvq2IdsqBW6VPvK9trdl6NGls9LQdH58ozA9Vtuf7JAKUknsL1p2gytxoY3XYz_B1Atd_Egx9egvruyyBw1Sny4jONuPMb4022sQ9AMd-nCgxNJsQvrYd_aaXUnceIxD-" style="opacity: 1; transform: scale(1);">
+<div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
+</div>
+<div class="p-12 flex-1 flex flex-col justify-between" id="display-content-inner">
+<div>
+<h4 class="font-headline-lg text-3xl mb-6" id="display-title">Divalto ERP</h4>
+<p class="font-body-lg text-on-surface-variant mb-10 leading-relaxed" id="display-desc">Pilotez l'intégralité de votre PME avec puissance.</p>
+<div class="flex flex-wrap gap-3 mb-12" id="display-badges">
+<span class="px-4 py-1 bg-surface-container-low border border-border-grid font-label-caps text-[10px] tracking-widest text-primary">Intégration totale</span>
+<span class="px-4 py-1 bg-surface-container-low border border-border-grid font-label-caps text-[10px] tracking-widest text-primary">Scalabilité</span>
+<span class="px-4 py-1 bg-surface-container-low border border-border-grid font-label-caps text-[10px] tracking-widest text-primary">BI Native</span>
+</div>
+</div>
+<button class="inline-flex items-center gap-4 bg-primary text-white font-label-caps px-8 py-4 hover:bg-primary/90 transition-all self-start">
+                                DÉCOUVRIR LA SOLUTION <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="absolute top-6 right-6 font-label-numeric text-[10px] text-on-surface-variant/40 tracking-widest">
+                            SYS_ID: <span class="" id="display-sys-id">ERP_DIV_01</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Partners -->
+<section class="border-b border-border-grid py-20 bg-surface-container-lowest reveal-on-scroll active">
+<div class="px-margin-desktop">
+<div class="flex flex-wrap justify-between items-center gap-16 opacity-40 grayscale hover:grayscale-0 transition-all duration-1000">
+<div class="flex items-center gap-3 font-headline-md font-bold tracking-tighter">
+<span class="material-symbols-outlined text-3xl">dataset</span> VECTOR
+                </div>
+<div class="flex items-center gap-3 font-headline-md font-bold tracking-tighter">
+<span class="material-symbols-outlined text-3xl">filter_drama</span> CLOUDSCALE
+                </div>
+<div class="flex items-center gap-3 font-headline-md font-bold tracking-tighter">
+<span class="material-symbols-outlined text-3xl">memory</span> CORETECH
+                </div>
+<div class="flex items-center gap-3 font-headline-md font-bold tracking-tighter">
+<span class="material-symbols-outlined text-3xl">settings_input_component</span> MODULAR
+                </div>
+<div class="flex items-center gap-3 font-headline-md font-bold tracking-tighter">
+<span class="material-symbols-outlined text-3xl">security</span> SECURE-S
+                </div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-40 border-b border-border-grid bg-background reveal-on-scroll active">
+<div class="px-margin-desktop">
+<div class="grid grid-cols-12 gap-gutter items-center">
+<div class="col-span-12 lg:col-span-6 mb-16 lg:mb-0">
+<div class="inline-block px-4 py-1 border border-primary mb-8">
+<span class="font-label-caps text-[10px] tracking-[0.2em] text-primary">ESTABLISHED 2000</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-text-high-contrast mb-8 leading-tight">L'Architecture de la Confiance.</h2>
+<p class="font-body-lg text-on-surface-variant max-w-xl mb-12 leading-relaxed">
+                        Depuis plus de deux décennies, Simsoft Technologies conçoit les fondations numériques des leaders de l'industrie. Nous transformons la complexité technologique en solutions agiles, robustes et pérennes pour accompagner votre transformation digitale.
+                    </p>
+<button class="group inline-flex items-center gap-4 bg-primary text-white font-label-caps px-10 py-5 hover:bg-primary/90 transition-all">
+                        DÉCOUVRIR NOTRE HISTOIRE
+                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="col-span-12 lg:col-span-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-grid-line bg-border-grid border border-border-grid">
+<div class="bg-surface-container-lowest p-10 flex flex-col justify-between aspect-square">
+<span class="font-label-numeric text-primary text-sm">01</span>
+<div>
+<div class="font-headline-md text-4xl mb-2">24</div>
+<div class="font-label-caps text-xs text-on-surface-variant tracking-widest">Ans d'Expertise</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-10 flex flex-col justify-between aspect-square">
+<span class="font-label-numeric text-primary text-sm">02</span>
+<div>
+<div class="font-headline-md text-4xl mb-2">+500</div>
+<div class="font-label-caps text-xs text-on-surface-variant tracking-widest">Projets Déployés</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-10 flex flex-col justify-between aspect-square md:col-span-2 md:aspect-auto md:h-40">
+<span class="font-label-numeric text-primary text-sm">03</span>
+<div class="flex justify-between items-end">
+<div>
+<div class="font-headline-md text-4xl mb-2">99.9%</div>
+<div class="font-label-caps text-xs text-on-surface-variant tracking-widest">Fiabilité Technique</div>
+</div>
+<span class="material-symbols-outlined text-primary/20 text-5xl">verified</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- NOS SERVICES Section (Target of Edit) -->
+<section class="py-32 bg-background reveal-on-scroll border-b border-border-grid active">
+<div class="px-margin-desktop">
+<div class="max-w-4xl mb-20">
+<h2 class="font-label-caps text-primary mb-6">NOS SERVICES</h2>
+<h3 class="font-headline-lg text-headline-lg text-text-high-contrast mb-6 leading-tight">Un Accompagnement de Bout en Bout.</h3>
+<p class="font-body-lg text-on-surface-variant">Plus qu'un fournisseur de logiciels, Simsoft est votre partenaire stratégique dans la transformation digitale, du conseil initial au support pérenne.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Service 1: Deep Blue -->
+<div class="bg-white p-8 border border-border-grid group md:col-span-2 hover:bg-primary transition-all duration-300">
+<div class="w-20 h-20 bg-blue-100 flex items-center justify-center mb-8 group-hover:bg-white/20 transition-colors duration-500">
+<span class="material-symbols-outlined text-blue-600 group-hover:text-white !text-5xl transition-all duration-500 group-hover:scale-110">strategy</span>
+</div>
+<h4 class="font-headline-md text-xl mb-4 group-hover:text-white transition-colors">Conseil en transformation digitale</h4>
+<p class="font-body-sm text-on-surface-variant leading-relaxed group-hover:text-white/90 transition-colors">Optimisez votre vision stratégique avec nos experts pour une transition numérique fluide et performante.</p>
+</div>
+<!-- Service 2: Emerald Green -->
+<div class="bg-white p-8 border border-border-grid group hover:bg-primary transition-all duration-300">
+<div class="w-20 h-20 bg-emerald-100 flex items-center justify-center mb-8 group-hover:bg-white/20 transition-colors duration-500">
+<span class="material-symbols-outlined text-emerald-600 group-hover:text-white !text-5xl transition-all duration-500 group-hover:scale-110">hub</span>
+</div>
+<h4 class="font-headline-md text-xl mb-4 group-hover:text-white transition-colors">Intégration d'ERP</h4>
+<p class="font-body-sm text-on-surface-variant leading-relaxed group-hover:text-white/90 transition-colors">Centralisez vos processus critiques avec des solutions robustes et évolutives adaptées à votre croissance.</p>
+</div>
+<!-- Service 3: Crimson Red -->
+<div class="bg-white p-8 border border-border-grid group md:col-span-2 hover:bg-primary transition-all duration-300">
+<div class="w-20 h-20 bg-rose-100 flex items-center justify-center mb-8 group-hover:bg-white/20 transition-colors duration-500">
+<span class="material-symbols-outlined text-rose-600 group-hover:text-white !text-5xl transition-all duration-500 group-hover:scale-110">terminal</span>
+</div>
+<h4 class="font-headline-md text-xl mb-4 group-hover:text-white transition-colors">Développement sur mesure</h4>
+<p class="font-body-sm text-on-surface-variant leading-relaxed group-hover:text-white/90 transition-colors">Transformez vos défis uniques en outils puissants grâce à nos développements personnalisés.</p>
+</div>
+<!-- Service 4: Amber Orange -->
+<div class="bg-white p-8 border border-border-grid group hover:bg-primary transition-all duration-300">
+<div class="w-20 h-20 bg-amber-100 flex items-center justify-center mb-8 group-hover:bg-white/20 transition-colors duration-500">
+<span class="material-symbols-outlined text-amber-600 group-hover:text-white !text-5xl transition-all duration-500 group-hover:scale-110">precision_manufacturing</span>
+</div>
+<h4 class="font-headline-md text-xl mb-4 group-hover:text-white transition-colors">Déploiement GMAO</h4>
+<p class="font-body-sm text-on-surface-variant leading-relaxed group-hover:text-white/90 transition-colors">Améliorez la disponibilité de vos actifs techniques grâce à une maintenance assistée par ordinateur de pointe.</p>
+</div>
+<!-- Service 5: Indigo Purple -->
+<div class="bg-white p-8 border border-border-grid group hover:bg-primary transition-all duration-300">
+<div class="w-20 h-20 bg-indigo-100 flex items-center justify-center mb-8 group-hover:bg-white/20 transition-colors duration-500">
+<span class="material-symbols-outlined text-indigo-600 group-hover:text-white !text-5xl transition-all duration-500 group-hover:scale-110">settings_suggest</span>
+</div>
+<h4 class="font-headline-md text-xl mb-4 group-hover:text-white transition-colors">Installation &amp; Configuration</h4>
+<p class="font-body-sm text-on-surface-variant leading-relaxed group-hover:text-white/90 transition-colors">Bénéficiez d'un déploiement clé en main pour une mise en service immédiate et sécurisée.</p>
+</div>
+<!-- Service 6: Cyan Teal -->
+<div class="bg-white p-8 border border-border-grid group hover:bg-primary transition-all duration-300">
+<div class="w-20 h-20 bg-cyan-100 flex items-center justify-center mb-8 group-hover:bg-white/20 transition-colors duration-500">
+<span class="material-symbols-outlined text-cyan-600 group-hover:text-white !text-5xl transition-all duration-500 group-hover:scale-110">school</span>
+</div>
+<h4 class="font-headline-md text-xl mb-4 group-hover:text-white transition-colors">Formation des utilisateurs</h4>
+<p class="font-body-sm text-on-surface-variant leading-relaxed group-hover:text-white/90 transition-colors">Maximisez le retour sur investissement en assurant une adoption rapide et efficace par vos équipes.</p>
+</div>
+<!-- Service 7: Violet -->
+<div class="bg-white p-8 border border-border-grid group hover:bg-primary transition-all duration-300">
+<div class="w-20 h-20 bg-violet-100 flex items-center justify-center mb-8 group-hover:bg-white/20 transition-colors duration-500">
+<span class="material-symbols-outlined text-violet-600 group-hover:text-white !text-5xl transition-all duration-500 group-hover:scale-110">support_agent</span>
+</div>
+<h4 class="font-headline-md text-xl mb-4 group-hover:text-white transition-colors">Support &amp; Maintenance</h4>
+<p class="font-body-sm text-on-surface-variant leading-relaxed group-hover:text-white/90 transition-colors">Garantissez la continuité de vos opérations avec une assistance réactive et proactive 24/7.</p>
+</div>
+<!-- Service 8: Slate Gray/Primary -->
+<div class="bg-white p-8 border border-border-grid group hover:bg-primary transition-all duration-300">
+<div class="w-20 h-20 bg-slate-100 flex items-center justify-center mb-8 group-hover:bg-white/20 transition-colors duration-500">
+<span class="material-symbols-outlined text-slate-600 group-hover:text-white !text-5xl transition-all duration-500 group-hover:scale-110">data_thresholding</span>
+</div>
+<h4 class="font-headline-md text-xl mb-4 group-hover:text-white transition-colors">Migration de données</h4>
+<p class="font-body-sm text-on-surface-variant leading-relaxed group-hover:text-white/90 transition-colors">Sécurisez vos flux d'informations historiques lors du passage vers vos nouvelles infrastructures.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Références -->
+<section class="py-40 bg-surface-container-lowest border-b border-border-grid reveal-on-scroll active relative">
+<div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+<div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 2px 2px, #00677f 1px, transparent 0); background-size: 24px 24px;"></div>
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,103,127,0.05),transparent_70%)]"></div>
+</div>
+<div class="px-margin-desktop relative z-10">
+<div class="max-w-4xl mx-auto text-center mb-20">
+<h2 class="font-label-caps text-primary mb-6">RÉFÉRENCES</h2>
+<h3 class="font-headline-lg text-headline-lg text-text-high-contrast mb-8 leading-tight">Ils nous font confiance</h3>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                    Depuis plus de deux décennies, Simsoft Technologies accompagne des entreprises de différents secteurs avec des solutions fiables, performantes et adaptées à leurs besoins.
+                </p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-grid-line bg-border-grid border border-border-grid">
+<!-- Logos -->
+<div class="bg-background p-10 flex flex-col items-center justify-center aspect-video group hover:bg-surface-container-low transition-all duration-500 cursor-default">
+<span class="material-symbols-outlined text-primary/40 group-hover:scale-110 group-hover:text-primary transition-all duration-500 mb-3">business</span>
+<span class="font-label-caps text-[10px] tracking-widest text-on-surface-variant/60">Logo Client</span>
+</div>
+<div class="bg-background p-10 flex flex-col items-center justify-center aspect-video group hover:bg-surface-container-low transition-all duration-500 cursor-default">
+<span class="material-symbols-outlined text-primary/40 group-hover:scale-110 group-hover:text-primary transition-all duration-500 mb-3">business</span>
+<span class="font-label-caps text-[10px] tracking-widest text-on-surface-variant/60">Logo Client</span>
+</div>
+<div class="bg-background p-10 flex flex-col items-center justify-center aspect-video group hover:bg-surface-container-low transition-all duration-500 cursor-default">
+<span class="material-symbols-outlined text-primary/40 group-hover:scale-110 group-hover:text-primary transition-all duration-500 mb-3">business</span>
+<span class="font-label-caps text-[10px] tracking-widest text-on-surface-variant/60">Logo Client</span>
+</div>
+<div class="bg-background p-10 flex flex-col items-center justify-center aspect-video group hover:bg-surface-container-low transition-all duration-500 cursor-default">
+<span class="material-symbols-outlined text-primary/40 group-hover:scale-110 group-hover:text-primary transition-all duration-500 mb-3">business</span>
+<span class="font-label-caps text-[10px] tracking-widest text-on-surface-variant/60">Logo Client</span>
+</div>
+<div class="bg-background p-10 flex flex-col items-center justify-center aspect-video group hover:bg-surface-container-low transition-all duration-500 cursor-default">
+<span class="material-symbols-outlined text-primary/40 group-hover:scale-110 group-hover:text-primary transition-all duration-500 mb-3">business</span>
+<span class="font-label-caps text-[10px] tracking-widest text-on-surface-variant/60">Logo Client</span>
+</div>
+<div class="bg-background p-10 flex flex-col items-center justify-center aspect-video group hover:bg-surface-container-low transition-all duration-500 cursor-default">
+<span class="material-symbols-outlined text-primary/40 group-hover:scale-110 group-hover:text-primary transition-all duration-500 mb-3">business</span>
+<span class="font-label-caps text-[10px] tracking-widest text-on-surface-variant/60">Logo Client</span>
+</div>
+<div class="bg-background p-10 flex flex-col items-center justify-center aspect-video group hover:bg-surface-container-low transition-all duration-500 cursor-default">
+<span class="material-symbols-outlined text-primary/40 group-hover:scale-110 group-hover:text-primary transition-all duration-500 mb-3">business</span>
+<span class="font-label-caps text-[10px] tracking-widest text-on-surface-variant/60">Logo Client</span>
+</div>
+<div class="bg-background p-10 flex flex-col items-center justify-center aspect-video group hover:bg-surface-container-low transition-all duration-500 cursor-default">
+<span class="material-symbols-outlined text-primary/40 group-hover:scale-110 group-hover:text-primary transition-all duration-500 mb-3">business</span>
+<span class="font-label-caps text-[10px] tracking-widest text-on-surface-variant/60">Logo Client</span>
+</div>
+<div class="bg-background p-10 flex flex-col items-center justify-center aspect-video group hover:bg-surface-container-low transition-all duration-500 cursor-default">
+<span class="material-symbols-outlined text-primary/40 group-hover:scale-110 group-hover:text-primary transition-all duration-500 mb-3">business</span>
+<span class="font-label-caps text-[10px] tracking-widest text-on-surface-variant/60">Logo Client</span>
+</div>
+<div class="bg-background p-10 flex flex-col items-center justify-center aspect-video group hover:bg-surface-container-low transition-all duration-500 cursor-default">
+<span class="material-symbols-outlined text-primary/40 group-hover:scale-110 group-hover:text-primary transition-all duration-500 mb-3">business</span>
+<span class="font-label-caps text-[10px] tracking-widest text-on-surface-variant/60">Logo Client</span>
+</div>
+<div class="bg-background p-10 flex flex-col items-center justify-center aspect-video group hover:bg-surface-container-low transition-all duration-500 cursor-default">
+<span class="material-symbols-outlined text-primary/40 group-hover:scale-110 group-hover:text-primary transition-all duration-500 mb-3">business</span>
+<span class="font-label-caps text-[10px] tracking-widest text-on-surface-variant/60">Logo Client</span>
+</div>
+<div class="bg-background p-10 flex flex-col items-center justify-center aspect-video group hover:bg-surface-container-low transition-all duration-500 cursor-default">
+<span class="material-symbols-outlined text-primary/40 group-hover:scale-110 group-hover:text-primary transition-all duration-500 mb-3">business</span>
+<span class="font-label-caps text-[10px] tracking-widest text-on-surface-variant/60">Logo Client</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio Section -->
+
+<!-- Équipe Section -->
+<section class="py-40 bg-background border-b border-border-grid reveal-on-scroll active">
+<div class="px-margin-desktop">
+<div class="mb-20">
+<h2 class="font-label-caps text-primary mb-6">CAPITAL HUMAIN</h2>
+<h3 class="font-headline-lg text-headline-lg text-text-high-contrast mb-4">Notre Équipe.</h3>
+<div class="w-20 h-1 bg-primary"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="relative group">
+<div class="aspect-[3/4] bg-surface-container-high border border-border-grid overflow-hidden mb-8">
+<div class="w-full h-full bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBsIFCvX3q1zH3oJ98OzCpzSBJvRdJYqSdwCdDSwdLoq2UBgtlgEczxHC3sAGTI3Fz35yy18ypVGRjLch3o8PRAIfm9jc-SL32quxxu0l33Cgz9I9PYbAqLQjhlkG35OQyiXemIj-gzuVb69z8Yq9t6nD4hE1X5m2mmTbWgvE0YL_mCxJqt97CvGAzq-Yichs8TWDvnuutCzMXqBSHIKfU1Xp70x4hiCw7qbqQoidX02DkWT3p6rHiV&quot;);"></div>
+</div>
+<h4 class="font-headline-md mb-2">Dr. Elara Vance</h4>
+<p class="font-label-caps text-primary mb-6">Directrice Technique</p>
+<div class="border-t border-border-grid pt-6">
+<p class="font-body-sm text-on-surface-variant leading-relaxed">Responsable de l'orientation technologique globale et de l'intégrité architecturale des systèmes Nexus.</p>
+</div>
+</div>
+<div class="relative group">
+<div class="aspect-[3/4] bg-surface-container-high border border-border-grid overflow-hidden mb-8">
+<div class="w-full h-full bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuD5V9EKlztY_-mpInwVLH_d0UjRldUoQfdw0lXXVdFSJTK9sft29nTbQkSqdvggTNrFAZ2VMzOrWo9Ps_KW7ePM5zrjo6c6MFdeq1YVIIJcVH2wMlr9McXSKjFpkAqi7zalpW12GFcMPFE9vfFLzDE_9YJVEkPkAbHAgEUXVXj40EZKA4EnWq56uhOiVpou9_874moNZ1O9tdupNYxT9IZJDfIMI_FiiWVRfSMt9xljDHU8EvWbykfN&quot;);"></div>
+</div>
+<h4 class="font-headline-md mb-2">Marcus Reed</h4>
+<p class="font-label-caps text-primary mb-6">Expert Infrastructure</p>
+<div class="border-t border-border-grid pt-6">
+<p class="font-body-sm text-on-surface-variant leading-relaxed">Spécialiste de la distribution globale et de la performance des nœuds à haute densité.</p>
+</div>
+</div>
+<div class="relative group">
+<div class="aspect-[3/4] bg-surface-container-high border border-border-grid overflow-hidden mb-8">
+<div class="w-full h-full bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDphh2mHMVFaBWUjq4iS6diftksUeZ8HYMoIl0XRLFfV1We7TJ5Zm4xyByIAJ1DhK-axTsDa2nklot466LvQdu2KzJxzo8F9MgHHmhhJAAsN-Z_HfUp77V5KVDamWm7MHbaXwe79rRzHrMECTC_fzqzMj6nPPUdvuFWT-Bswlr-o3hE5rEQSOnOhnvXs9cRFtOBe4Bnn3NastTJiMOdVUzFRew69yXkr0XRLEgJIFmmAtThhBKuYiCY&quot;);"></div>
+</div>
+<h4 class="font-headline-md mb-2">Sarah Chen</h4>
+<p class="font-label-caps text-primary mb-6">Architecte Cloud</p>
+<div class="border-t border-border-grid pt-6">
+<p class="font-body-sm text-on-surface-variant leading-relaxed">Conçoit des environnements hybrides sécurisés et scalables pour les déploiements de niveau entreprise.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ -->
+<section class="border-b border-border-grid reveal-on-scroll active">
+<div class="grid grid-cols-1 md:grid-cols-2">
+<div class="p-margin-desktop border-r border-border-grid bg-surface-container-low flex flex-col justify-between py-32">
+<div>
+<h2 class="font-label-caps text-primary mb-10">REQUÊTES</h2>
+<h3 class="font-headline-lg text-headline-lg mb-16 leading-tight">Spécifications <br>Fréquentes.</h3>
+</div>
+<div class="flex items-center gap-5 text-primary group cursor-pointer">
+<span class="material-symbols-outlined text-3xl group-hover:translate-x-1 transition-transform">help</span>
+<span class="font-label-caps tracking-widest border-b border-primary pb-1">SOUMETTRE UN TICKET TECHNIQUE</span>
+</div>
+</div>
+<div class="divide-y divide-border-grid">
+<div class="group">
+<button class="w-full flex justify-between items-center p-16 hover:bg-surface-container-highest transition-all text-left">
+<span class="font-headline-md pr-8">Quel est le délai de mise en œuvre pour Nexus Core ?</span>
+<span class="material-symbols-outlined group-hover:rotate-45 transition-transform text-primary">add</span>
+</button>
+<div class="hidden px-16 pb-16 text-on-surface-variant leading-relaxed max-w-xl">
+                        Le déploiement standard varie de 4 à 8 semaines selon la complexité des infrastructures héritées existantes et les exigences de migration de données.
+                    </div>
+</div>
+<div class="group">
+<button class="w-full flex justify-between items-center p-16 hover:bg-surface-container-highest transition-all text-left">
+<span class="font-headline-md pr-8">Comment Simsoft gère-t-il la synchronisation des données legacy ?</span>
+<span class="material-symbols-outlined group-hover:rotate-45 transition-transform text-primary">add</span>
+</button>
+<div class="hidden px-16 pb-16 text-on-surface-variant leading-relaxed max-w-xl">
+                        Nos protocoles de pontage propriétaires assurent une synchronisation bidirectionnelle sans interrompre les opérations en temps réel, utilisant des environnements de staging sécurisés.
+                    </div>
+</div>
+<div class="group">
+<button class="w-full flex justify-between items-center p-16 hover:bg-surface-container-highest transition-all text-left">
+<span class="font-headline-md pr-8">Offrez-vous un support technique sur site 24/7 ?</span>
+<span class="material-symbols-outlined group-hover:rotate-45 transition-transform text-primary">add</span>
+</button>
+<div class="hidden px-16 pb-16 text-on-surface-variant leading-relaxed max-w-xl">
+                        Oui, notre niveau Entreprise inclut une réponse sur site mondiale 24/7 sous 4 heures, soutenue par une équipe d'ingénierie dédiée.
+                    </div>
+</div>
+<div class="group">
+<button class="w-full flex justify-between items-center p-16 hover:bg-surface-container-highest transition-all text-left">
+<span class="font-headline-md pr-8">Quelles sont les normes de conformité supportées ?</span>
+<span class="material-symbols-outlined group-hover:rotate-45 transition-transform text-primary">add</span>
+</button>
+<div class="hidden px-16 pb-16 text-on-surface-variant leading-relaxed max-w-xl">
+                        Tous les systèmes Simsoft sont conformes ISO 27001, SOC2 Type II et RGPD dès l'installation, avec des certifications régionales supplémentaires sur demande.
+                    </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Blog Section -->
+<section class="py-40 bg-background border-b border-border-grid reveal-on-scroll active">
+<div class="px-margin-desktop">
+<div class="mb-20">
+<h2 class="font-label-caps text-primary mb-6">BLOG</h2>
+<h3 class="font-headline-lg text-headline-lg text-text-high-contrast mb-4">Insights Techniques.</h3>
+<div class="w-20 h-1 bg-primary"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="group cursor-pointer">
+<div class="aspect-video bg-surface-container-high border border-border-grid mb-8 overflow-hidden">
+<img alt="6G Connectivité" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp_YCoovBTyjaYbQjflCva21jV825OVjTuG2PaON4DM_-aICA7jxJUTgza8lEA7WYfPeYGSYaPoi0JfNdqKzciYD8CQPZORcC30pzxI58O7AD4rGXkwbZPwohfJuBi6afNLCDngopKLPMosej_BRP8Me_ZfMTEcR8D_G9WuioeSCNQz4JFFNBvrYfzPmGmuM_UEGlDEU3Rda0hskfxKPCUdXrHgfhdiacia3J_4l9ExOCZ3F2eQ-HP">
+</div>
+<div class="flex items-center gap-4 mb-4">
+<span class="font-label-numeric text-[10px] py-1 px-3 bg-surface-container-highest border border-border-grid">SYS_LOG: 6G_INFRA</span>
+</div>
+<h4 class="font-headline-md text-xl text-text-high-contrast mb-4 group-hover:text-primary transition-colors">L'Avenir de la Connectivité 6G</h4>
+<p class="font-body-sm text-on-surface-variant mb-8 leading-relaxed">Exploration des protocoles à ultra-basse latence pour les réseaux industriels de nouvelle génération.</p>
+<div class="flex items-center gap-2 font-label-caps text-xs text-text-high-contrast group-hover:gap-4 transition-all">
+                        LIRE L'ARTICLE <span class="material-symbols-outlined text-sm">north_east</span>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-video bg-surface-container-high border border-border-grid mb-8 overflow-hidden">
+<img alt="Quantum Security" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFYcr51psPBtGcz4ZfBp8XXMNM6Ar9gXgT8qE1MnJWc35oz4-uZBMlgt8Vk3zrlyLKU65C0uroyhz-YBlkJznlQ3Sb5oSfNAhAYGAQ_-_xoVlzUw3Pr6AXdRzc_7FFoaE2wKsuD0HjgwWiYAf2z_MbYAwQ6HU2BiUXE1m9LwHqaUShVuca9_dt3T_MNMruAnYmnr2D4QB2tHzVnY3lDyRTODi-FkTIEz2gualA8FaSMFcWGUq7ahsw">
+</div>
+<div class="flex items-center gap-4 mb-4">
+<span class="font-label-numeric text-[10px] py-1 px-3 bg-surface-container-highest border border-border-grid">SYS_LOG: Q_CRYPTO</span>
+</div>
+<h4 class="font-headline-md text-xl text-text-high-contrast mb-4 group-hover:text-primary transition-colors">Sécurité Post-Quantique</h4>
+<p class="font-body-sm text-on-surface-variant mb-8 leading-relaxed">Protéger les infrastructures critiques contre les menaces de demain avec des algorithmes résistants.</p>
+<div class="flex items-center gap-2 font-label-caps text-xs text-text-high-contrast group-hover:gap-4 transition-all">
+                        LIRE L'ARTICLE <span class="material-symbols-outlined text-sm">north_east</span>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-video bg-surface-container-high border border-border-grid mb-8 overflow-hidden">
+<img alt="Edge AI" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZAKVSYo5PKqi0LTcmXbHgYBMF9m9si_VlmOTRH_DD7ARjD7yZYcLQBmalWv5_3Wp2OHU9QniAM_tumz5YEPeQQepNe7XjekEljERSOc6XFNMO1PgHIMqCU61dITxFKQvG9nXh2cEYr5HbobUbIddFAqujiZ886VoWgjiuSaCEngu9iQ-4gMAdcD0m4hQxb9MEPua77iXmvKT2MrHmMVqwQaIcF2u6jlbQfNt6L2no5kjxo1eWaehO">
+</div>
+<div class="flex items-center gap-4 mb-4">
+<span class="font-label-numeric text-[10px] py-1 px-3 bg-surface-container-highest border border-border-grid">SYS_LOG: EDGE_AI</span>
+</div>
+<h4 class="font-headline-md text-xl text-text-high-contrast mb-4 group-hover:text-primary transition-colors">IA à la Périphérie (Edge)</h4>
+<p class="font-body-sm text-on-surface-variant mb-8 leading-relaxed">Optimisation des flux de données en temps réel pour l'industrie 4.0 et les systèmes autonomes.</p>
+<div class="flex items-center gap-2 font-label-caps text-xs text-text-high-contrast group-hover:gap-4 transition-all">
+                        LIRE L'ARTICLE <span class="material-symbols-outlined text-sm">north_east</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Avis Section -->
+<section class="py-40 bg-surface-container-low border-b border-border-grid reveal-on-scroll active">
+<div class="px-margin-desktop">
+<div class="mb-20">
+<h2 class="font-label-caps text-primary mb-6">CLIENTS</h2>
+<h3 class="font-headline-lg text-headline-lg text-text-high-contrast mb-4">Avis de nos Partenaires.</h3>
+<div class="w-20 h-1 bg-primary"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-grid-line bg-border-grid border border-border-grid">
+<div class="bg-background p-12 flex flex-col justify-between">
+<div>
+<div class="flex gap-1 mb-8">
+<span class="material-symbols-outlined text-primary text-lg">star</span>
+<span class="material-symbols-outlined text-primary text-lg">star</span>
+<span class="material-symbols-outlined text-primary text-lg">star</span>
+<span class="material-symbols-outlined text-primary text-lg">star</span>
+<span class="material-symbols-outlined text-primary text-lg">star</span>
+</div>
+<p class="font-body-md text-on-surface text-lg leading-relaxed mb-10 italic">"Simsoft a transformé notre infrastructure avec une précision mathématique."</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-highest border border-border-grid flex items-center justify-center font-label-numeric text-primary">JL</div>
+<div>
+<p class="font-label-caps text-sm text-text-high-contrast">Jean-Luc M.</p>
+<p class="font-label-numeric text-[10px] text-on-surface-variant">CTO CHEZ NEXUS</p>
+</div>
+</div>
+</div>
+<div class="bg-background p-12 flex flex-col justify-between">
+<div>
+<div class="flex gap-1 mb-8">
+<span class="material-symbols-outlined text-primary text-lg">star</span>
+<span class="material-symbols-outlined text-primary text-lg">star</span>
+<span class="material-symbols-outlined text-primary text-lg">star</span>
+<span class="material-symbols-outlined text-primary text-lg">star</span>
+<span class="material-symbols-outlined text-primary text-lg">star</span>
+</div>
+<p class="font-body-md text-on-surface text-lg leading-relaxed mb-10 italic">"Une fiabilité inégalée pour nos opérations critiques."</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-highest border border-border-grid flex items-center justify-center font-label-numeric text-primary">SL</div>
+<div>
+<p class="font-label-caps text-sm text-text-high-contrast">Sarah L.</p>
+<p class="font-label-numeric text-[10px] text-on-surface-variant">DIRECTRICE INNOVATION</p>
+</div>
+</div>
+</div>
+<div class="bg-background p-12 flex flex-col justify-between">
+<div>
+<div class="flex gap-1 mb-8">
+<span class="material-symbols-outlined text-primary text-lg">star</span>
+<span class="material-symbols-outlined text-primary text-lg">star</span>
+<span class="material-symbols-outlined text-primary text-lg">star</span>
+<span class="material-symbols-outlined text-primary text-lg">star</span>
+<span class="material-symbols-outlined text-primary text-lg">star</span>
+</div>
+<p class="font-body-md text-on-surface text-lg leading-relaxed mb-10 italic">"Leur approche modulaire est la référence du secteur."</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-highest border border-border-grid flex items-center justify-center font-label-numeric text-primary">MD</div>
+<div>
+<p class="font-label-caps text-sm text-text-high-contrast">Marc D.</p>
+<p class="font-label-numeric text-[10px] text-on-surface-variant">INGÉNIEUR EN CHEF</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-40 bg-surface-container-low border-b border-border-grid reveal-on-scroll active">
+<div class="px-margin-desktop grid grid-cols-12 gap-gutter">
+<div class="col-span-12 lg:col-span-5">
+<h2 class="font-label-caps text-primary mb-8">NOUS CONTACTER</h2>
+<h3 class="font-headline-lg text-headline-lg text-text-high-contrast mb-12 leading-tight">
+                    Prêt à architecturer votre infrastructure ?
+                </h3>
+<div class="space-y-8">
+<div class="flex items-start gap-6">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<div>
+<p class="font-label-caps text-text-high-contrast mb-1">SIÈGE SOCIAL</p>
+<p class="font-body-sm text-on-surface-variant">120 Wall Street, 28th Floor<br>New York, NY 10005, USA</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<span class="material-symbols-outlined text-primary">mail</span>
+<div>
+<p class="font-label-caps text-text-high-contrast mb-1">EMAIL TECHNIQUE</p>
+<p class="font-body-sm text-on-surface-variant">architecture@simsoft.tech</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<span class="material-symbols-outlined text-primary">call</span>
+<div>
+<p class="font-label-caps text-text-high-contrast mb-1">LIGNE DIRECTE</p>
+<p class="font-body-sm text-on-surface-variant">+1 (212) 555-0198</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-7">
+<form class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-background p-10 border border-border-grid">
+<div class="col-span-1">
+<label class="font-label-caps text-xs text-on-surface-variant mb-2 block">NOM COMPLET</label>
+<input class="w-full bg-surface-container-low border border-border-grid p-3 font-body-sm focus:border-primary outline-none transition-colors" placeholder="Jean Dupont" type="text">
+</div>
+<div class="col-span-1">
+<label class="font-label-caps text-xs text-on-surface-variant mb-2 block">EMAIL PROFESSIONNEL</label>
+<input class="w-full bg-surface-container-low border border-border-grid p-3 font-body-sm focus:border-primary outline-none transition-colors" placeholder="j.dupont@entreprise.com" type="email">
+</div>
+<div class="col-span-2">
+<label class="font-label-caps text-xs text-on-surface-variant mb-2 block">SUJET</label>
+<input class="w-full bg-surface-container-low border border-border-grid p-3 font-body-sm focus:border-primary outline-none transition-colors" placeholder="Demande de consultation technique" type="text">
+</div>
+<div class="col-span-2">
+<label class="font-label-caps text-xs text-on-surface-variant mb-2 block">MESSAGE</label>
+<textarea class="w-full bg-surface-container-low border border-border-grid p-3 font-body-sm focus:border-primary outline-none transition-colors" placeholder="Décrivez vos besoins en infrastructure..." rows="4"></textarea>
+</div>
+<div class="col-span-2">
+<button class="w-full bg-primary text-white font-label-caps py-4 tracking-widest hover:bg-primary/90 transition-all active:scale-[0.98]" type="submit">
+                            ENVOYER LA REQUÊTE
+                        </button>
+</div>
+</form>
+</div>
+</div>
+</section>
+</main>
+<footer class="w-full bg-surface-container-lowest border-t border-border-grid">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-24">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-3 mb-10">
+<div class="w-8 h-8 bg-primary"></div>
+<span class="font-headline-md text-headline-md text-text-high-contrast uppercase font-bold">SIMSOFT</span>
+</div>
+<p class="font-body-sm text-on-surface-variant mb-10 max-w-xs leading-relaxed">
+                Faire progresser le standard de l'architecture technique depuis 2000. L'excellence de l'ingénierie en périphérie.
+            </p>
+<div>
+<h4 class="font-label-caps text-text-high-contrast mb-4 text-xs">SUIVEZ-NOUS</h4>
+<div class="flex gap-3">
+<a class="w-9 h-9 border border-border-grid flex items-center justify-center hover:text-primary hover:border-primary transition-all duration-300" href="#" target="_blank"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg></a>
+<a class="w-9 h-9 border border-border-grid flex items-center justify-center hover:text-primary hover:border-primary transition-all duration-300" href="#" target="_blank"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg></a>
+<a class="w-9 h-9 border border-border-grid flex items-center justify-center hover:text-primary hover:border-primary transition-all duration-300" href="#" target="_blank"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg></a>
+<a class="w-9 h-9 border border-border-grid flex items-center justify-center hover:text-primary hover:border-primary transition-all duration-300" href="#" target="_blank"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.332 3.608 1.308.975.975 1.245 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.332 2.633-1.308 3.608-.975.975-2.242 1.245-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.332-3.608-1.308-.975-.975-1.245-2.242-1.308-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.332-2.633 1.308-3.608.975-.975 2.242-1.245 3.608-1.308 1.266-.058 1.646-.07 4.85-.07zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.2 4.353 2.612 6.766 6.97 6.967 1.28.057 1.688.072 4.948.072s3.668-.015 4.948-.072c4.351-.2 6.764-2.612 6.965-6.967.058-1.28.073-1.689.073-4.948s-.015-3.668-.072-4.947c-.2-4.353-2.612-6.765-6.967-6.967C15.668.014 15.26 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4.162 4.162 0 1 1 0-8.324 4.162 4.162 0 0 1 0 8.324zM18.406 3.506a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"></path></svg></a>
+</div>
+</div>
+</div>
+<div>
+<h4 class="font-label-caps text-text-high-contrast mb-10">RESSOURCES</h4>
+<ul class="space-y-5 font-label-caps text-on-surface-variant">
+<li class=""><a class="hover:text-primary transition-colors" href="#">Plan du site</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Documentation</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Référence API</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Journal des modifs</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-text-high-contrast mb-10">JURIDIQUE</h4>
+<ul class="space-y-5 font-label-caps text-on-surface-variant">
+<li class=""><a class="hover:text-primary transition-colors" href="#">Mentions Légales</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Confidentialité</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Conditions d'utilisation</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Conformité</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-text-high-contrast mb-10">CONNEXION</h4>
+<ul class="space-y-5 font-label-caps text-on-surface-variant">
+<li class=""><a class="hover:text-primary transition-colors" href="#">LinkedIn</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">GitHub</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Twitter (X)</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Portail Support</a></li>
+</ul>
+</div>
+</div>
+<div class="px-margin-desktop py-10 border-t border-border-grid flex flex-col md:flex-row justify-between items-center gap-6">
+<span class="font-label-caps text-on-surface-variant text-[10px] tracking-widest">© 2024 SIMSOFT TECHNOLOGIES. TOUS DROITS RÉSERVÉS.</span>
+<div class="flex items-center gap-8">
+<span class="font-label-numeric text-primary flex items-center gap-3 text-xs">
+<span class="w-2 h-2 bg-primary animate-pulse"></span> STATUT SYSTÈME: OPTIMAL
+            </span>
+</div>
+</div>
+</footer>
+<script>
+    const solutionsData = {
+        divalto: {
+            title: "Divalto ERP",
+            desc: "Pilotez l'intégralité de votre PME avec puissance.",
+            image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDbcUtcaVNU4QslU0Ls91a_0REjp6lqpTmnFWZWx66NPMOS7TcajOrHqq94Pv_huWNdXGL4KnkkCe-xEWDlXP1CvIYqO9QAGnQxUrNFU7Ya0jLtxjOcqccpvq2IdsqBW6VPvK9trdl6NGls9LQdH58ozA9Vtuf7JAKUknsL1p2gytxoY3XYz_B1Atd_Egx9egvruyyBw1Sny4jONuPMb4022sQ9AMd-nCgxNJsQvrYd_aaXUnceIxD-",
+            sysId: "ERP_DIV_01",
+            badges: ["Intégration totale", "Scalabilité", "BI Native"]
+        },
+        wavesoft: {
+            title: "WaveSoft ERP",
+            desc: "La gestion agile pour les entreprises en croissance.",
+            image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDbcUtcaVNU4QslU0Ls91a_0REjp6lqpTmnFWZWx66NPMOS7TcajOrHqq94Pv_huWNdXGL4KnkkCe-xEWDlXP1CvIYqO9QAGnQxUrNFU7Ya0jLtxjOcqccpvq2IdsqBW6VPvK9trdl6NGls9LQdH58ozA9Vtuf7JAKUknsL1p2gytxoY3XYz_B1Atd_Egx9egvruyyBw1Sny4jONuPMb4022sQ9AMd-nCgxNJsQvrYd_aaXUnceIxD-",
+            sysId: "ERP_WAV_02",
+            badges: ["Simple", "Robuste", "Personnalisable"]
+        },
+        firstparc: {
+            title: "First Parc (GMAO)",
+            desc: "Optimisez la maintenance de vos actifs critiques.",
+            image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDbcUtcaVNU4QslU0Ls91a_0REjp6lqpTmnFWZWx66NPMOS7TcajOrHqq94Pv_huWNdXGL4KnkkCe-xEWDlXP1CvIYqO9QAGnQxUrNFU7Ya0jLtxjOcqccpvq2IdsqBW6VPvK9trdl6NGls9LQdH58ozA9Vtuf7JAKUknsL1p2gytxoY3XYz_B1Atd_Egx9egvruyyBw1Sny4jONuPMb4022sQ9AMd-nCgxNJsQvrYd_aaXUnceIxD-",
+            sysId: "GMAO_FST_03",
+            badges: ["Préventif", "QR Codes", "Reporting"]
+        },
+        dev: {
+            title: "Développement spécifique",
+            desc: "Des solutions sur mesure pour vos besoins uniques.",
+            image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBvZjhgpRyM4-eGub9jd2IQnq0uK4okxr_oxjIHPnZLBdH17t03H4no0dJ3zNG2RMycuVrW3ObbworSq-xtFt2DRiu4SeGyfftjRuv0GarGBvfFPck3ymclLvxQFlvU8Qapa3jlgsoCAFVeF4ae50bFFy9zED46hm18N_GMUXDfr9aOfmzL4CyYSAH5lYg8i5Hy-up2RaAvmZLUpqbCB9q7yzzDflr77_u_ZGgq_K8tmE3uhwFHWsMe",
+            sysId: "DEV_CUS_04",
+            badges: ["API First", "Cloud Native", "DevOps"]
+        },
+        quorion: {
+            title: "Solutions d'encaissement (QUORiON)",
+            desc: "Simplifiez la gestion de vos points de vente.",
+            image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCo_8iTt_cocprsqftJpRJiuua32uCGyZHZeuizs8IQxyfraf3qsKEmxsTByiZbV3ujRmUVnLGEVu-m_Q-MbFvRKzDzA5yRAp7-CRNNM5o6a8s68S8k4qNaNFqh-2IQSLXe7yHGD_t25Slo8ib5vqvVh_9Bbi8fgKK8rY69jJI63ZChzY3PXm88BAAcn-TthA4PIwvf3AmC47vGxgXWQ43Cpre0yr9TatknnvKO-53UuEZRUFmrw2UY",
+            sysId: "POS_QUO_05",
+            badges: ["Fiabilité", "Tactile", "Stock temps réel"]
+        },
+        balances: {
+            title: "Balances électroniques",
+            desc: "Précision et conformité pour votre pesage.",
+            image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCo_8iTt_cocprsqftJpRJiuua32uCGyZHZeuizs8IQxyfraf3qsKEmxsTByiZbV3ujRmUVnLGEVu-m_Q-MbFvRKzDzA5yRAp7-CRNNM5o6a8s68S8k4qNaNFqh-2IQSLXe7yHGD_t25Slo8ib5vqvVh_9Bbi8fgKK8rY69jJI63ZChzY3PXm88BAAcn-TthA4PIwvf3AmC47vGxgXWQ43Cpre0yr9TatknnvKO-53UuEZRUFmrw2UY",
+            sysId: "SCL_MET_06",
+            badges: ["Métrologie légale", "Connecté", "Haute précision"]
+        },
+        support: {
+            title: "Assistance & Support",
+            desc: "Une expertise technique à vos côtés 24/7.",
+            image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC8FQfjh7njWm6ffRky8xO6Uk_Cq-9GrBPopNrXLd82TWZ1TBfm3y6xbEsMFNTnvaig68UPlQgf6Z_mLvwJl1oNKC4wzLbo-nigWXivORSZFDLxUk2ur6O5SuldsQRGdv1T7lkWU-BNa9guDfBI2aovdLsrKRkLupN9XrtQzkv6uZ79CvmTjNKy3wE-IwklZMOYi-16uNFXKRudv0xM2YSze8_-NcoecG6btLqEbGxBZ3BZqWt2xZi7",
+            sysId: "SUP_HLP_07",
+            badges: ["Réactivité", "Sécurité", "Accompagnement"]
+        }
+    };
+
+    document.querySelectorAll('.solution-trigger').forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const solutionKey = trigger.getAttribute('data-solution');
+            const data = solutionsData[solutionKey];
+            if (trigger.classList.contains('active-trigger')) return;
+            document.querySelectorAll('.solution-trigger').forEach(t => t.classList.remove('active-trigger'));
+            trigger.classList.add('active-trigger');
+            const cardInner = document.getElementById('display-content-inner');
+            const cardImage = document.getElementById('display-image');
+            cardInner.style.opacity = '0';
+            cardInner.style.transform = 'translateY(10px)';
+            cardImage.style.opacity = '0';
+            cardImage.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                document.getElementById('display-title').innerText = data.title;
+                document.getElementById('display-desc').innerText = data.desc;
+                document.getElementById('display-image').src = data.image;
+                document.getElementById('display-sys-id').innerText = data.sysId;
+                const badgesContainer = document.getElementById('display-badges');
+                badgesContainer.innerHTML = '';
+                data.badges.forEach(badge => {
+                    const span = document.createElement('span');
+                    span.className = "px-4 py-1 bg-surface-container-low border border-border-grid font-label-caps text-[10px] tracking-widest text-primary";
+                    span.innerText = badge;
+                    badgesContainer.appendChild(span);
+                });
+                cardInner.style.opacity = '1';
+                cardInner.style.transform = 'translateY(0)';
+                cardImage.style.opacity = '1';
+                cardImage.style.transform = 'scale(1)';
+            }, 200);
+        });
+    });
+
+    document.querySelectorAll('button.w-full.flex').forEach(button => {
+        button.addEventListener('click', () => {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.material-symbols-outlined');
+            const isHidden = content.classList.contains('hidden');
+            if (isHidden) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(45deg)';
+                button.classList.add('bg-surface-container-highest');
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+                button.classList.remove('bg-surface-container-highest');
+            }
+        });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('active');
+        });
+    }, { threshold: 0.05 });
+
+    document.querySelectorAll('section').forEach(section => {
+        section.classList.add('reveal-on-scroll');
+        observer.observe(section);
+    });
+
+    document.querySelector('button .material-symbols-outlined').addEventListener('click', function() {
+        this.innerText = (this.innerText === 'light_mode') ? 'dark_mode' : 'light_mode';
+    });
+</script>
+
+
+</body></html>

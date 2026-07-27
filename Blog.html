@@ -1,0 +1,380 @@
+<!DOCTYPE html><html class="light" lang="fr" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Blog - SIMSOFT TECH</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#e7e8ea",
+                    "on-primary-container": "#74bfd9",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#6a3a00",
+                    "surface-dim": "#d9dadc",
+                    "on-surface": "#191c1d",
+                    "secondary-fixed-dim": "#c7c6c6",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed": "#2d1600",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed": "#001f28",
+                    "on-background": "#191c1d",
+                    "text-high-contrast": "#1b1c1c",
+                    "surface-tint": "#00677f",
+                    "secondary": "#5e5e5e",
+                    "on-tertiary-container": "#eaa565",
+                    "primary-container": "#004d60",
+                    "border-grid": "rgba(44, 51, 69, 0.15)",
+                    "inverse-surface": "#2e3132",
+                    "surface-variant": "#e5e2e1",
+                    "surface-bright": "#f8f9fb",
+                    "error-container": "#ffdad6",
+                    "surface": "#f8f9fb",
+                    "tertiary-fixed-dim": "#ffb876",
+                    "on-secondary-container": "#636262",
+                    "inverse-primary": "#86d1ec",
+                    "surface-background": "#fcf9f8",
+                    "outline-variant": "#c0c8cc",
+                    "error": "#ba1a1a",
+                    "background": "#f8f9fb",
+                    "surface-container": "#edeeef",
+                    "on-surface-variant": "#40484c",
+                    "primary-fixed-dim": "#86d1ec",
+                    "primary-fixed": "#b6eaff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#f2f4f5",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "primary": "#003543",
+                    "on-primary-fixed-variant": "#004e60",
+                    "inverse-on-surface": "#eff1f2",
+                    "surface-container-highest": "#e1e3e4",
+                    "secondary-container": "#e1dfdf",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#4a2700",
+                    "outline": "#70787c",
+                    "tertiary-fixed": "#ffdcc0",
+                    "on-tertiary-fixed-variant": "#6b3b01",
+                    "on-secondary-fixed-variant": "#464747",
+                    "secondary-fixed": "#e4e2e2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "24px",
+                    "gutter": "24px",
+                    "grid-unit": "40px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "label-caps": ["JetBrains Mono"],
+                    "display": ["Hanken Grotesk"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "display": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .hero-mask {
+            clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+
+        .oblique-divider {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .grid-bg {
+            background-image: linear-gradient(var(--border-grid) 1px, transparent 1px),
+                              linear-gradient(90deg, var(--border-grid) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .card-hover-effect {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-8px);
+            border-color: #00677f;
+        }
+    </style>
+</head>
+<body class="bg-surface-background text-on-background font-body-md">
+<!-- Hero Section -->
+<section class="relative min-h-[70vh] flex items-center overflow-hidden border-b border-grid">
+<div class="absolute inset-0 grid-bg opacity-10 transition-all duration-1000 opacity-100 translate-y-0"></div>
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-12 items-center py-20 relative z-10 transition-all duration-1000 opacity-100 translate-y-0 lg:grid-cols-12">
+<div class="space-y-8 lg:col-span-7">
+<div class="inline-flex items-center space-x-4">
+<span class="w-12 h-[2px] bg-surface-tint"></span>
+<span class="font-label-caps text-label-caps text-surface-tint uppercase">Insights &amp; Actualités</span>
+</div>
+<h1 class="font-display text-8xl text-text-high-contrast max-w-2xl">Notre Blog.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                    Découvrez nos articles, conseils, actualités et analyses sur le futur de l'industrie connectée et de la transformation digitale.
+                </p>
+<div class="pt-4">
+<a class="inline-flex items-center space-x-2 bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps transition-opacity hover:opacity-90" href="#featured">
+<span class="">EXPLORER LE CONTENU</span>
+<span class="material-symbols-outlined">arrow_downward</span>
+</a>
+</div>
+</div>
+<div class="hidden md:block relative h-full lg:col-span-5 lg:h-[600px]">
+<div class="hero-mask absolute inset-0 bg-surface-container-high border-4 border-grid animate-float overflow-hidden scale-75 opacity-50 max-w-md mx-auto">
+<img class="w-full h-full object-cover grayscale opacity-80 mix-blend-multiply" data-alt="A sophisticated digital artwork showing abstract industrial components and flowing data streams in a professional high-tech style. The color palette features deep teals and sharp whites with a clean, light-mode background. The lighting is soft yet technical, evoking a sense of precision engineering and future-ready software architecture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9xkmLvaKGfJr-WPOdllf_ceiE29iFRdqQhAya3cgqpmKeHbIM0UrmcKgmFhPS6zBmmOJYlGjIPuFVGyjXuLNFUrLJSsz5TMjsS7JYchsNG6MVZ4PHR2khuo893w2vOnhlz-_Ys72GAwUrR1q0_umgMCHVKMPXg_GkCSOZGgGCvPBN-GdDeAesUDJNCU_A4jF38_PMLmE6n5BS3c7cRM8CRMf4oixZpYFt0ZMZyu4mVd6EXkwok4N7_5aGDDTV7GhSc9XcyIVQYxY">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+</div>
+<!-- Floating Info Card -->
+<div class="absolute -bottom-10 -left-10 bg-surface-container-lowest p-6 border-2 border-grid shadow-xl max-w-xs animate-float" style="animation-delay: -3s;">
+<span class="font-label-caps text-[10px] text-surface-tint block mb-2">SYS_UPDATE</span>
+<p class="font-label-caps text-label-caps text-text-high-contrast">DERNIÈRE PUBLICATION : 12.04.2024</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Search & Categories -->
+<nav class="sticky top-0 z-40 bg-surface-background/80 backdrop-blur-md border-b border-grid">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop py-6">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-8">
+<!-- Search Bar -->
+<div class="relative max-w-md w-full">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container-low border border-grid focus:border-surface-tint focus:ring-0 font-body-md text-on-surface" placeholder="Rechercher un article..." type="text">
+</div>
+<!-- Category Filters -->
+<div class="flex items-center space-x-2 overflow-x-auto pb-2 md:pb-0 no-scrollbar">
+<button class="whitespace-nowrap px-6 py-2 bg-primary text-on-primary font-label-caps text-label-caps">TOUS</button>
+<button class="whitespace-nowrap px-6 py-2 bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps hover:bg-surface-tint hover:text-on-primary transition-colors">ERP</button>
+<button class="whitespace-nowrap px-6 py-2 bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps hover:bg-surface-tint hover:text-on-primary transition-colors">GMAO</button>
+<button class="whitespace-nowrap px-6 py-2 bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps hover:bg-surface-tint hover:text-on-primary transition-colors">TRANSFORMATION DIGITALE</button>
+<button class="whitespace-nowrap px-6 py-2 bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps hover:bg-surface-tint hover:text-on-primary transition-colors">IA &amp; EDGE</button>
+</div>
+</div>
+</div>
+</nav>
+<!-- Featured Articles -->
+<section class="py-20 border-b border-grid relative" id="featured">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop transition-all duration-1000 opacity-100 translate-y-0">
+<h2 class="font-display text-headline-lg text-text-high-contrast mb-12 flex items-center">
+<span class="material-symbols-outlined mr-4 text-surface-tint">star</span>
+                À LA UNE
+            </h2>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-0 border border-grid bg-surface-container-lowest overflow-hidden group cursor-pointer">
+<div class="lg:col-span-7 h-[400px] lg:h-[600px] relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A futuristic industrial dashboard displayed on a semi-transparent screen, showing complex 3D factory layouts and real-time data visualizations. The setting is a clean, modern control center with cool blue and white tones. The image captures the essence of advanced manufacturing and digital twins in an industrial context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJAfg5XKofGHMVsRxc3W6FKRAeGrQ3izTd_Qh7FWA0GGk6rj4_XB4tFsjSqiB9I2uk4q6q1wIE8oF1hiYSqerwWfo1xLDQwIQlz51OQcKv5sFOsUUHlkobeQ7aZVo7gFcWkGtUbv-CXKgml_E8WFwORltCZFvvR61KkYw8txk3WCob23U8Zc1EYjz1HgrkyyU4cLtsMIJ8M4zUHtYsEG_QetAK4uzp8ydhp7zJN9uBwnCSkqxMoehz__NSoiJylIkF-lHglFIuKIw">
+<div class="absolute inset-0 bg-primary/20 mix-blend-multiply group-hover:bg-primary/10 transition-colors"></div>
+</div>
+<div class="lg:col-span-5 p-10 md:p-16 flex flex-col justify-center space-y-6 border-l border-grid">
+<div class="flex items-center space-x-4">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 font-label-caps text-[10px] tracking-widest">DOSSIER SPÉCIAL</span>
+<span class="font-label-caps text-label-caps text-outline">15 MIN LECTURE</span>
+</div>
+<h3 class="font-display text-headline-lg text-text-high-contrast leading-tight">Le Futur de l'Industrie 4.0 : L'Edge Computing au service de la performance.</h3>
+<p class="font-body-lg text-on-surface-variant">Comment la décentralisation de l'intelligence artificielle révolutionne la maintenance prédictive et réduit les coûts opérationnels de 30%.</p>
+<div class="pt-4">
+<button class="inline-flex items-center space-x-4 text-surface-tint font-label-caps text-label-caps group/btn">
+<span class="">LIRE L'ARTICLE COMPLET</span>
+<span class="material-symbols-outlined group-hover/btn:translate-x-2 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Articles Grid -->
+<section class="py-20 bg-surface-container-low/30 relative">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop transition-all duration-1000 opacity-100 translate-y-0">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest border border-grid card-hover-effect flex flex-col group">
+<div class="h-64 overflow-hidden relative border-b border-grid">
+<img class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0" data-alt="A clean, minimalist workspace with a tablet showing a complex ERP system interface. Soft morning light hits a technical drawing and a cup of coffee. The overall mood is professional and focused on digital organization and efficiency." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ97jvbUU8YZktZiQxtqbn0yFGpoqNCMz0Mx3DlumY2iLicAoAnlqhMrB8tinuRPJloL2AA_7uPmlyqfJo1JgPkiXZZe4jcmubEyj4hzPiYtumu-y7ALbXZDG-TDnQvfPSEVb6zOzskb8u3xZWWZINf0Bwt5_CjXjFoK24N8e9c17Up3kPPEY3QeSGwSgORbxugFDyYgP8tPoShXBSsLdCosjiopm2qKqUFKw9ddMEJl1kxI6KPyEtYaB3HdqAzQp4JE29BrlErP4">
+<span class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 font-label-caps text-[10px]">ERP</span>
+</div>
+<div class="p-8 flex-1 flex flex-col space-y-4">
+<div class="flex justify-between font-label-caps text-[10px] text-outline">
+<span class="">04 OCT. 2023</span>
+<span class="">8 MIN</span>
+</div>
+<h4 class="font-display text-body-lg font-bold text-text-high-contrast leading-tight">Optimiser sa gestion de stock avec Divalto : 5 conseils experts.</h4>
+<p class="font-body-md text-on-surface-variant line-clamp-3">Découvrez comment tirer le meilleur parti de votre ERP pour une logistique sans faille et une traçabilité totale.</p>
+<div class="pt-4 mt-auto">
+<a class="inline-flex items-center text-surface-tint font-label-caps text-[12px] group/link" href="#">
+<span class="">LIRE L'ARTICLE</span>
+<span class="material-symbols-outlined ml-2 text-sm group-hover/link:translate-x-1 transition-transform">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest border border-grid card-hover-effect flex flex-col group">
+<div class="h-64 overflow-hidden relative border-b border-grid">
+<img class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0" data-alt="Close up of a robotic arm in a precision manufacturing plant, illuminated by clean white and cyan lights. The mechanical parts are polished and show intricate engineering detail. Minimalist and technical aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8T5yAImsmlpVGpHw_7xTFx6SjD3gauwULx1yNxx0q4LCVqbTF2IYCfgcOex21OUIs55ds0yqZ82-1M4ob43L6LOieGo-AT10jyNB7mKVFcT0oWmOAvohq4qSDJZyhAcDsrakfWIk07dicJp4oHe6DQ0OJHL1dd4SA52OqRsGddv2Nogs_MkGpDbEk74FlLmxQEKcY7vArkw6ZmNya7MYvwcBCn80DvIlr6eIWlEycfEfynt5K8k25cgf1FL7CQjP9b-NhDp7m4c4">
+<span class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 font-label-caps text-[10px]">GMAO</span>
+</div>
+<div class="p-8 flex-1 flex flex-col space-y-4">
+<div class="flex justify-between font-label-caps text-[10px] text-outline">
+<span class="">28 SEPT. 2023</span>
+<span class="">5 MIN</span>
+</div>
+<h4 class="font-display text-body-lg font-bold text-text-high-contrast leading-tight">Maintenance 4.0 : Pourquoi passer d'un mode curatif au préventif ?</h4>
+<p class="font-body-md text-on-surface-variant line-clamp-3">L'impact de la GMAO moderne sur la durée de vie de vos actifs et la réduction des arrêts de production non planifiés.</p>
+<div class="pt-4 mt-auto">
+<a class="inline-flex items-center text-surface-tint font-label-caps text-[12px] group/link" href="#">
+<span class="">LIRE L'ARTICLE</span>
+<span class="material-symbols-outlined ml-2 text-sm group-hover/link:translate-x-1 transition-transform">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest border border-grid card-hover-effect flex flex-col group">
+<div class="h-64 overflow-hidden relative border-b border-grid">
+<img class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0" data-alt="A network graph visualization representing cloud data connectivity across a global scale. Minimalist lines and nodes glowing in soft teal on a light background. Technical and futuristic corporate imagery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzdAt8siLV2tsr215HlrsNCSWgE6V0TvX0qLUiO-qjpaHvA7tXHoJHO7GB_1JvL-BsZehUN38LHQdncNE48n4pj3ufAZGFWyUNJIdFkBMeKLBFyAFT2xzKGPhjyb0YtCMqzp7Ae51LBtFb4Ryuv0_AzORLNn2EfSrIP4BJOenEsQvcEmikw1rj4LdVK7Hz-wSTHPjQkn03xt5zIrvIIkRVjPOnup4F0McHt-Grbki9xF6wVeESMd46kqIKu46NJVIFf9CKAsgWp9g">
+<span class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 font-label-caps text-[10px]">TECH</span>
+</div>
+<div class="p-8 flex-1 flex flex-col space-y-4">
+<div class="flex justify-between font-label-caps text-[10px] text-outline">
+<span class="">15 SEPT. 2023</span>
+<span class="">12 MIN</span>
+</div>
+<h4 class="font-display text-body-lg font-bold text-text-high-contrast leading-tight">Cybersécurité industrielle : Protéger vos lignes de production.</h4>
+<p class="font-body-md text-on-surface-variant line-clamp-3">Guide complet sur les meilleures pratiques de sécurité pour les environnements OT et IT interconnectés.</p>
+<div class="pt-4 mt-auto">
+<a class="inline-flex items-center text-surface-tint font-label-caps text-[12px] group/link" href="#">
+<span class="">LIRE L'ARTICLE</span>
+<span class="material-symbols-outlined ml-2 text-sm group-hover/link:translate-x-1 transition-transform">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Repeat Card (Simplified for example) -->
+<div class="bg-surface-container-lowest border border-grid card-hover-effect flex flex-col group">
+<div class="h-64 overflow-hidden relative border-b border-grid">
+<img class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0" data-alt="Abstract architectural shot of a modern data center with repeating vertical lines and soft industrial lighting. Professional blue and gray tones, high contrast, minimalist tech vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARjKYV7rvRLDpYsxNX8TWxjRKRBkSBdmysdjSUqJZBOh1wGGzFnGX7SVaydYAQBEKzdmKMvzrdDnndUNEWt-6oM6gul7sQAqYhCouvhqnQ2-5r24i0lxruS9wtUiBJp3MwofHfMwfLmnPtAO3j6c5x8AGouux1YznRoqxnMj7fTZ5DodwQ9nG3en34pO9ZRwvlz_-W-0fTcaac6w9BUoWblw_H3J2S225U00F-Norh9oHtBavUWeQn_wHBINsZE72muG7zsEU97Ew">
+<span class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 font-label-caps text-[10px]">CLOUD</span>
+</div>
+<div class="p-8 flex-1 flex flex-col space-y-4">
+<div class="flex justify-between font-label-caps text-[10px] text-outline">
+<span class="">02 SEPT. 2023</span>
+<span class="">6 MIN</span>
+</div>
+<h4 class="font-display text-body-lg font-bold text-text-high-contrast leading-tight">Migration Cloud : Étapes clés pour une transition sans risques.</h4>
+<p class="font-body-md text-on-surface-variant line-clamp-3">Comment orchestrer le déplacement de vos infrastructures critiques vers le cloud hybride.</p>
+<div class="pt-4 mt-auto">
+<a class="inline-flex items-center text-surface-tint font-label-caps text-[12px] group/link" href="#">
+<span class="">LIRE L'ARTICLE</span>
+<span class="material-symbols-outlined ml-2 text-sm group-hover/link:translate-x-1 transition-transform">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Placeholder Card -->
+<div class="bg-surface-container-lowest border border-grid border-dashed card-hover-effect flex flex-col items-center justify-center p-12 text-center group">
+<span class="material-symbols-outlined text-4xl text-outline mb-4 group-hover:scale-110 transition-transform">add_circle</span>
+<h4 class="font-display text-body-lg font-bold text-outline mb-2">Charger plus d'articles</h4>
+<p class="font-label-caps text-[10px] text-outline">ARCHIVES DEPUIS 2000</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="py-24 relative overflow-hidden bg-primary text-on-primary">
+<div class="absolute inset-0 grid-bg opacity-5 transition-all duration-1000 opacity-100 translate-y-0"></div>
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop relative z-10 transition-all duration-1000 opacity-100 translate-y-0">
+<div class="max-w-4xl mx-auto border-4 border-on-primary/20 p-10 md:p-20 text-center space-y-8">
+<span class="font-label-caps text-label-caps tracking-[0.4em]">SYSTEM_SUBSCRIPTION</span>
+<h2 class="font-display text-headline-lg text-on-primary">Restez informé des dernières innovations industrielles.</h2>
+<p class="font-body-lg opacity-80 max-w-2xl mx-auto">Recevez chaque mois une sélection d'analyses techniques, de cas clients et de nouveautés produits directement dans votre boîte mail.</p>
+<form class="flex flex-col md:flex-row gap-0 max-w-xl mx-auto pt-4">
+<input class="flex-1 bg-on-primary text-primary px-6 py-4 font-body-md border-none focus:ring-2 focus:ring-surface-tint" placeholder="votre-email@entreprise.com" type="email">
+<button class="bg-surface-tint text-on-primary px-8 py-4 font-label-caps text-label-caps hover:bg-on-primary hover:text-primary transition-colors border-none" type="submit">
+                        S'ABONNER
+                    </button>
+</form>
+<p class="font-label-caps text-[10px] opacity-50 uppercase">Garanti sans spam. Désinscription possible à tout moment.</p>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-20 bg-surface-background border-t border-grid relative">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row items-center justify-between gap-10 transition-all duration-1000 opacity-100 translate-y-0">
+<div class="space-y-4">
+<h3 class="font-display text-headline-lg text-text-high-contrast">Vous avez un projet de transformation digitale ?</h3>
+<p class="font-body-lg text-on-surface-variant">Nos experts sont à votre disposition pour analyser vos besoins techniques.</p>
+</div>
+<div class="shrink-0">
+<a class="inline-flex items-center space-x-6 bg-primary text-on-primary px-10 py-6 font-label-caps text-label-caps group" href="#">
+<span class="">CONTACTER UN EXPERT</span>
+<div class="w-8 h-8 flex items-center justify-center bg-surface-tint">
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+</div>
+</div>
+</section>
+<script>
+        // Smooth reveal animations on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+
+        // Search bar interaction
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('ring-2', 'ring-surface-tint/20');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('ring-2', 'ring-surface-tint/20');
+        });
+    </script>
+
+
+</body></html>

@@ -1,0 +1,9 @@
+<app-loading-screen *ngIf="loadingService.isLoading$ | async"></app-loading-screen>
+<app-header></app-header>
+<main class="pt-20">
+  <router-outlet></router-outlet>
+</main>
+<app-footer></app-footer>
+
+<!-- Custom GSAP Lighting Cursor (halo only, native arrow preserved) -->
+<div class="custom-cursor-halo" id="cursor-halo"></div>

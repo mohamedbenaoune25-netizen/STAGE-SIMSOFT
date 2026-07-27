@@ -1,0 +1,176 @@
+/* Global styles and custom keyframes */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-entry { animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.stagger-1 { animation-delay: 0.1s; opacity: 0; }
+.stagger-2 { animation-delay: 0.2s; opacity: 0; }
+.stagger-3 { animation-delay: 0.3s; opacity: 0; }
+
+.hero-mask {
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
+
+.oblique-split {
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
+
+.oblique-split-reverse {
+  clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+}
+
+.solution-card-transition {
+  transition: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1), 
+              transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.solution-trigger {
+  transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-left: 0px solid transparent;
+}
+
+.active-trigger {
+  background-color: #fcf9f8 !important; 
+  border-color: #00677f !important; 
+  border-left: 4px solid #00677f !important;
+}
+
+.active-trigger p:first-child {
+  color: #00677f;
+}
+
+#display-image {
+  transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1), 
+              opacity 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.grid-bg {
+  background-image: radial-gradient(circle at 2px 2px, rgba(0,103,127,0.05) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+.card-hover-effect {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-8px);
+  border-color: #00677f;
+}
+
+.premium-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 53, 67, 0.08);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+  border-color: rgba(0, 103, 127, 0.2);
+}
+
+/* Futuristic GSAP & Hover Effects */
+
+.hover-neon-glow {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hover-neon-glow:hover {
+  box-shadow: 0 0 15px 2px rgba(59, 130, 246, 0.6), 0 0 30px 5px rgba(59, 130, 246, 0.4);
+  transform: scale(1.05);
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+
+.hover-scale-dynamic {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.4s;
+}
+.hover-scale-dynamic:hover {
+  transform: scale(1.1) rotate(-1deg);
+  background-color: #f1f5f9;
+}
+
+.hover-cyber-glitch {
+  transition: all 0.1s ease-in-out;
+}
+.hover-cyber-glitch:hover {
+  animation: glitch 0.3s infinite;
+}
+
+@keyframes glitch {
+  0% { transform: translate(0) }
+  20% { transform: translate(-2px, 2px) }
+  40% { transform: translate(-2px, -2px) }
+  60% { transform: translate(2px, 2px) }
+  80% { transform: translate(2px, -2px) }
+  100% { transform: translate(0) }
+}
+
+/* ===================== Custom Lighting Cursor (Halo Only) ===================== */
+
+/* Keep the native arrow cursor visible on everything */
+* {
+  cursor: default;
+}
+
+a, button, [class*="cursor-pointer"], label, [role="button"] {
+  cursor: pointer;
+}
+
+input, textarea, select {
+  cursor: text;
+}
+
+/* The glowing halo that follows the mouse via GSAP */
+.custom-cursor-halo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  border: 2px solid rgba(59, 130, 246, 0.9);
+  background: radial-gradient(circle, rgba(59,130,246,0.3) 0%, rgba(59,130,246,0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999998;
+  transition: width 0.25s ease, height 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 0 18px rgba(59, 130, 246, 0.6), 0 0 6px rgba(59, 130, 246, 0.4) inset;
+}
+
+.custom-cursor-halo.cursor-hover-state {
+  width: 75px;
+  height: 75px;
+  border-color: rgba(59, 130, 246, 1);
+  background: radial-gradient(circle, rgba(59,130,246,0.45) 0%, rgba(59,130,246,0) 80%);
+  box-shadow: 0 0 35px rgba(59, 130, 246, 0.9), 0 0 12px rgba(59, 130, 246, 0.5) inset;
+}
+
+/* ===================== Marquee Partner Logos ===================== */
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 20s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}

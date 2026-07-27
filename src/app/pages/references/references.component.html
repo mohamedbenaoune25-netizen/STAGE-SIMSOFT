@@ -1,0 +1,247 @@
+<!-- 1. COMPACT HERO -->
+<section class="relative w-full min-h-[30vh] flex items-center bg-surface-container-low technical-grid border-b border-grid overflow-hidden">
+  <div class="px-margin-mobile md:px-margin-desktop py-16 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+    <div class="flex-1 space-y-6 z-10">
+      <span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">Écosystème SimSoft</span>
+      <h1 class="font-headline-lg text-headline-lg text-primary max-w-xl">Ils nous font confiance</h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+        Depuis plus de deux décennies, SimSoft Technologies accompagne les acteurs majeurs de l'industrie et du commerce dans leur transformation numérique avec une précision mathématique.
+      </p>
+      <div class="pt-4">
+        <button class="bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 transition-all hover:bg-primary-container active:scale-95 flex items-center gap-2">
+          DÉCOUVRIR NOS RÉFÉRENCES
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+    <div class="flex-1 relative hidden md:block">
+      <div class="aspect-square w-full max-w-md ml-auto border-2 border-primary/20 p-4 relative">
+        <div class="absolute -top-4 -left-4 w-12 h-12 border-t-2 border-l-2 border-primary"></div>
+        <div class="absolute -bottom-4 -right-4 w-12 h-12 border-b-2 border-r-2 border-primary"></div>
+        <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="Technical architectural lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAf0NRIM_sQkjZ6plGkfyYijCz3uvGcxL-nAB8c-In1zYTTv9BiKH-9kfu0X76tM3O7G0MqtVjnrwyo_qjqImO9rBH_KocLmq_WkQNwe2eFq3lIyHZKAJGAGpjve5s4af_aZOUe4UGRtKeB-0PglsuElbxWDesNsfaKVD4dOhWm6jAfJH0MibNmbvJaTcBUEOI6PKLoma57kC4fyFC8hIcAUvihhCDiaWyU8zvanbuQEP3w-J58y5N5"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. NOS RÉFÉRENCES (INTERACTIVE ANIMATED GRID & FILTER) -->
+<section class="py-24 bg-[#f8fafc] relative overflow-hidden">
+  <!-- Subtle background glow effects -->
+  <div class="absolute -top-40 -right-40 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto relative z-10">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+      <div>
+        <span class="font-label-caps text-xs text-primary tracking-widest uppercase mb-2 block">PORTFOLIO CLIENTS</span>
+        <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight">Nos Références d'Exception</h2>
+      </div>
+      <span class="font-label-caps text-xs text-slate-500 px-4 py-2 bg-white rounded-full border border-slate-200 shadow-sm self-start md:self-auto">
+        {{ filteredReferences.length }} PARTENAIRES AFFICHÉS
+      </span>
+    </div>
+
+    <!-- Category Filter Tabs -->
+    <div class="flex items-center gap-3 overflow-x-auto pb-6 mb-12 scrollbar-none">
+      <button 
+        *ngFor="let cat of categories" 
+        (click)="setCategory(cat)"
+        [ngClass]="activeCategory === cat ? 'bg-primary text-white shadow-lg shadow-primary/30' : 'bg-white text-slate-600 hover:bg-slate-100'"
+        class="px-6 py-3 rounded-full text-xs font-bold tracking-wider uppercase transition-all duration-300 border border-slate-200/80 flex-shrink-0 cursor-pointer">
+        {{ cat }}
+      </button>
+    </div>
+
+    <!-- Animated References Card Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div 
+        *ngFor="let item of filteredReferences" 
+        (click)="openModal(item)"
+        class="group bg-white rounded-2xl p-8 border border-slate-200/80 shadow-sm hover:shadow-2xl hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 cursor-pointer flex flex-col justify-between relative overflow-hidden">
+        
+        <!-- Subtle Top Accent Line -->
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-blue-400 to-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+
+        <div>
+          <!-- Header: Badges -->
+          <div class="flex items-center justify-between gap-2 mb-6">
+            <span class="px-3 py-1 bg-primary/10 text-primary font-label-caps text-[10px] tracking-widest rounded-full font-bold">
+              {{ item.badge }}
+            </span>
+            <span class="px-3 py-1 bg-emerald-50 text-emerald-600 font-mono text-[10px] font-bold rounded-full border border-emerald-200/60">
+              {{ item.stats }}
+            </span>
+          </div>
+
+          <!-- Logo Container Frame -->
+          <div class="w-full h-36 bg-slate-50 rounded-xl border border-slate-100 flex items-center justify-center p-6 mb-6 group-hover:bg-blue-50/40 transition-colors duration-500 overflow-hidden">
+            <img [src]="item.logo" [alt]="item.name" class="max-h-20 max-w-[85%] object-contain transition-transform duration-500 group-hover:scale-125">
+          </div>
+
+          <!-- Title & Description -->
+          <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-primary transition-colors">{{ item.name }}</h3>
+          <p class="text-sm text-slate-600 leading-relaxed mb-6 line-clamp-2">{{ item.description }}</p>
+        </div>
+
+        <!-- Action Button -->
+        <div class="flex items-center justify-between pt-4 border-t border-slate-100 mt-auto">
+          <span class="text-xs font-bold text-primary group-hover:underline flex items-center gap-1">
+            Fiche projet
+            <span class="material-symbols-outlined text-sm transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+          </span>
+          <span class="text-[10px] text-slate-400 font-mono">{{ item.category }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Detail Modal Overlay -->
+  <div *ngIf="selectedReference" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md transition-all">
+    <div class="bg-white rounded-3xl p-8 md:p-12 max-w-2xl w-full shadow-2xl relative border border-slate-200 animate-entry">
+      <!-- Close Button -->
+      <button (click)="closeModal()" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition-all cursor-pointer">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+
+      <div class="flex items-center gap-4 mb-8">
+        <div class="w-24 h-24 bg-slate-50 border border-slate-200 rounded-2xl p-4 flex items-center justify-center">
+          <img [src]="selectedReference.logo" [alt]="selectedReference.name" class="max-h-16 max-w-full object-contain">
+        </div>
+        <div>
+          <span class="px-3 py-1 bg-primary/10 text-primary font-label-caps text-[10px] tracking-widest rounded-full font-bold block w-max mb-2">
+            {{ selectedReference.badge }}
+          </span>
+          <h3 class="text-2xl md:text-3xl font-extrabold text-slate-900">{{ selectedReference.name }}</h3>
+          <p class="text-xs text-slate-500 font-mono">{{ selectedReference.category }}</p>
+        </div>
+      </div>
+
+      <div class="space-y-6 text-slate-700 leading-relaxed mb-8">
+        <p class="text-base md:text-lg font-medium text-slate-900">{{ selectedReference.description }}</p>
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 flex items-center gap-4">
+          <span class="material-symbols-outlined text-primary text-3xl">verified</span>
+          <div>
+            <span class="text-xs text-slate-500 block uppercase font-bold tracking-wider">Performance mesurée</span>
+            <span class="text-lg font-extrabold text-primary">{{ selectedReference.stats }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-end">
+        <button (click)="closeModal()" class="bg-primary text-white font-bold px-8 py-3 rounded-full hover:bg-primary/90 transition-all cursor-pointer">
+          Fermer
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. SECTEURS D'ACTIVITÉ -->
+<section class="py-24 bg-surface-container oblique-divider-top oblique-divider-bottom pb-40">
+  <div class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto mt-16">
+    <div class="text-center mb-16">
+      <span class="font-label-caps text-label-caps text-primary tracking-widest">DIVERSITÉ STRATÉGIQUE</span>
+      <h2 class="font-headline-lg text-headline-lg text-primary mt-2">Secteurs d'activité</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div class="bg-surface-container-lowest p-8 border border-grid flex flex-col gap-4 group hover:border-primary transition-all">
+        <span class="material-symbols-outlined text-primary text-4xl">factory</span>
+        <h3 class="font-bold text-xl text-primary">Industrie</h3>
+        <p class="text-on-surface-variant text-sm">Optimisation des flux de production et gestion de parc machine temps réel.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-8 border border-grid flex flex-col gap-4 group hover:border-primary transition-all">
+        <span class="material-symbols-outlined text-primary text-4xl">storefront</span>
+        <h3 class="font-bold text-xl text-primary">Commerce</h3>
+        <p class="text-on-surface-variant text-sm">Solutions POS connectées et gestion d'inventaire omnicanale.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-8 border border-grid flex flex-col gap-4 group hover:border-primary transition-all">
+        <span class="material-symbols-outlined text-primary text-4xl">conveyor_belt</span>
+        <h3 class="font-bold text-xl text-primary">Distribution</h3>
+        <p class="text-on-surface-variant text-sm">Intelligence logistique pour les réseaux de distribution nationaux.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-8 border border-grid flex flex-col gap-4 group hover:border-primary transition-all">
+        <span class="material-symbols-outlined text-primary text-4xl">medical_services</span>
+        <h3 class="font-bold text-xl text-primary">Santé</h3>
+        <p class="text-on-surface-variant text-sm">Gestion sécurisée des données de santé et traçabilité médicale.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-8 border border-grid flex flex-col gap-4 group hover:border-primary transition-all">
+        <span class="material-symbols-outlined text-primary text-4xl">support_agent</span>
+        <h3 class="font-bold text-xl text-primary">Services</h3>
+        <p class="text-on-surface-variant text-sm">Plateformes collaboratives pour les entreprises de services B2B.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-8 border border-grid flex flex-col gap-4 group hover:border-primary transition-all">
+        <span class="material-symbols-outlined text-primary text-4xl">account_balance</span>
+        <h3 class="font-bold text-xl text-primary">Administration</h3>
+        <p class="text-on-surface-variant text-sm">Dématérialisation et portails citoyens pour le secteur public.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-8 border border-grid flex flex-col gap-4 group hover:border-primary transition-all">
+        <span class="material-symbols-outlined text-primary text-4xl">local_shipping</span>
+        <h3 class="font-bold text-xl text-primary">Logistique</h3>
+        <p class="text-on-surface-variant text-sm">Pilotage de supply chain complexe et suivi de flotte industriel.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-8 border border-grid flex flex-col gap-4 group hover:border-primary transition-all">
+        <span class="material-symbols-outlined text-primary text-4xl">corporate_fare</span>
+        <h3 class="font-bold text-xl text-primary">PME & Grandes Entreprises</h3>
+        <p class="text-on-surface-variant text-sm">ERP sur mesure adaptés à chaque taille de structure.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. TÉMOIGNAGES CLIENTS -->
+<section class="py-32 bg-white relative">
+  <div class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+    <h2 class="font-headline-lg text-headline-lg text-primary mb-16 text-center">Paroles d'experts</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div class="flex flex-col gap-8 p-12 bg-surface-container-low relative border border-grid">
+        <span class="material-symbols-outlined text-primary/10 text-8xl absolute top-4 right-8 select-none">format_quote</span>
+        <p class="font-body-lg text-body-lg text-primary italic leading-relaxed relative z-10">
+          "L'implémentation du système SimSoft a radicalement transformé notre gestion de production. La précision des données et la réactivité du support technique sont sans équivalent sur le marché."
+        </p>
+        <div class="flex items-center gap-4 border-t border-grid pt-8">
+          <div class="w-16 h-16 bg-primary-container rounded-none overflow-hidden">
+            <img class="w-full h-full object-cover grayscale" alt="Marc-Antoine Valery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ7hf9DBPDWP0MaXvE4Ti806Yiz94HKZLwU0yFwX2-hGa_U4iGPHvz_HbwaEnwI44tWcwQztXr8r3LD1k2rEJ_bWFRfbh_NJtn7NrIDElGJK_BnbPT_B3q2hgPL-7SR_w6arEYKv3U6EMT8S-f-8k5ijVPtb5kaek-8CENHXi1Oo8_sFBIo-QK9WHHTZmhY95Vaor0QHiNkhbW8qHswy8su9Ga4X57JIK4iszxQqN5UeXPs5EByiBU"/>
+          </div>
+          <div>
+            <p class="font-bold text-primary">Marc-Antoine Valery</p>
+            <p class="text-sm text-on-surface-variant">Directeur des Opérations, IndustraGlobal</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-8 p-12 bg-primary text-on-primary relative border border-primary">
+        <span class="material-symbols-outlined text-white/10 text-8xl absolute top-4 right-8 select-none">format_quote</span>
+        <p class="font-body-lg text-body-lg italic leading-relaxed relative z-10">
+          "Travailler avec SimSoft, c'est choisir un partenaire qui comprend réellement les enjeux du terrain. Leur solution nous a permis de réduire nos erreurs de stock de 45% en moins de six mois."
+        </p>
+        <div class="flex items-center gap-4 border-t border-white/20 pt-8">
+          <div class="w-16 h-16 bg-surface-container rounded-none overflow-hidden">
+            <img class="w-full h-full object-cover grayscale" alt="Sophie Morel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTs-9f3-ssQj6VtsPjPCCwcc56eAFU0qFP53aIhqyGJtL66HC_ZK99cs75b9e27AusCsqCyI087b9WoWkn5K6SWWChZtA-6eWmc6be5TlXbbcUQjKlEeACLZS3Y1bpChdzd6F6K5Yavj25OKO41i1yHuS-N7B-sVhsnnqt6gFBxeAhEkSO_sirKhjm8MP3eDuAtzKAffEhjwYo_lA31uEUS7Nnj7Ko9nO5bxKx27bq1hC3qR5sE4PT"/>
+          </div>
+          <div>
+            <p class="font-bold">Sophie Morel</p>
+            <p class="text-sm opacity-80">Directrice Supply Chain, LogiTrack Solutions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. CALL TO ACTION -->
+<section class="relative bg-primary py-32 overflow-hidden">
+  <div class="px-margin-mobile md:px-margin-desktop max-w-5xl mx-auto text-center relative z-10">
+    <h2 class="font-display text-3xl md:text-5xl text-on-primary mb-8 leading-tight">Rejoignez les entreprises qui font confiance à SimSoft Technologies</h2>
+    <p class="font-body-lg text-body-lg text-on-primary/70 mb-12 max-w-2xl mx-auto">
+      Prêt à passer à l'étape supérieure de votre transformation industrielle ? Nos experts sont à votre disposition pour une analyse personnalisée de vos besoins.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <button class="bg-surface-container-lowest text-primary font-label-caps text-label-caps px-10 py-5 transition-all hover:bg-white active:scale-95 shadow-xl">
+        PARLER À UN EXPERT
+      </button>
+      <button class="border border-white/30 text-white font-label-caps text-label-caps px-10 py-5 transition-all hover:bg-white/10 active:scale-95">
+        DEMANDER UNE DÉMO
+      </button>
+    </div>
+  </div>
+</section>

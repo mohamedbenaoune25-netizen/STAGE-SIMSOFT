@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#74bfd9",
+                        "secondary-fixed": "#e4e2e2",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "on-surface-variant": "#40484c",
+                        "inverse-on-surface": "#eff1f2",
+                        "surface-bright": "#f8f9fb",
+                        "on-secondary-container": "#636262",
+                        "on-error": "#ffffff",
+                        "surface": "#f8f9fb",
+                        "outline-variant": "#c0c8cc",
+                        "on-primary-fixed-variant": "#004e60",
+                        "error": "#ba1a1a",
+                        "background": "#f8f9fb",
+                        "primary-fixed": "#b6eaff",
+                        "outline": "#70787c",
+                        "surface-container-low": "#f2f4f5",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2e3132",
+                        "text-high-contrast": "#1b1c1c",
+                        "surface-background": "#fcf9f8",
+                        "primary-container": "#004d60",
+                        "surface-container-high": "#e7e8ea",
+                        "on-primary-fixed": "#001f28",
+                        "on-tertiary-fixed-variant": "#6b3b01",
+                        "inverse-primary": "#86d1ec",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#00677f",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e1e3e4",
+                        "secondary": "#5e5e5e",
+                        "surface-container": "#edeeef",
+                        "tertiary-fixed": "#ffdcc0",
+                        "surface-variant": "#e1e3e4",
+                        "border-grid": "rgba(44, 51, 69, 0.15)",
+                        "primary-fixed-dim": "#86d1ec",
+                        "tertiary": "#4a2700",
+                        "tertiary-fixed-dim": "#ffb876",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#e1dfdf",
+                        "on-surface": "#191c1d",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#2d1600",
+                        "on-tertiary-container": "#eaa565",
+                        "primary": "#003543",
+                        "on-background": "#191c1d",
+                        "on-secondary-fixed-variant": "#464747",
+                        "surface-dim": "#d9dadc",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "tertiary-container": "#6a3a00",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "24px",
+                        "grid-unit": "40px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-caps": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "display": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .oblique-split {
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+        .oblique-split-reverse {
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .grid-bg {
+            background-image: linear-gradient(to right, rgba(44, 51, 69, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(44, 51, 69, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface selection:bg-primary selection:text-on-primary overflow-x-hidden">
+<main class="pt-20">
+<!-- Section 1: Hero Section -->
+<section class="relative min-h-[60vh] flex items-center bg-surface border-b border-grid overflow-hidden grid-bg">
+<div class="max-w-full mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-gutter items-center w-full py-grid-unit">
+<div class="z-10">
+<span class="font-label-caps text-label-caps text-surface-tint mb-4 block">IDENTITÉ & ENGAGEMENT</span>
+<h1 class="font-headline-lg text-headline-lg md:text-display mb-6 text-primary leading-tight">À propos de SimSoft Technologies</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-xl">
+                        Depuis plus de deux décennies, nous accompagnons les entreprises dans leur transformation digitale grâce à des solutions innovantes et un accompagnement de proximité.
+                    </p>
+<button class="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps tracking-widest hover:bg-primary-container hover:text-on-primary-container transition-all duration-300 transform active:scale-95 border border-primary">
+                        DÉCOUVRIR NOTRE HISTOIRE
+                    </button>
+</div>
+<div class="relative h-[400px] md:h-[600px] border-4 border-grid">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="A sophisticated black and white architectural photograph of a modern glass skyscraper reflecting a clear sky. The image is high-contrast with sharp industrial edges, embodying a professional and technological corporate aesthetic. The lighting is crisp, highlighting the structural precision of the metal beams and glass panels. It feels authoritative, reliable, and deeply rooted in modern software engineering culture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdA3deVHcyCPKQBhCiZAYhiL9oiTzqbEAxgf1kJFPoGzfQJh8dzR5CDY8Rx_2gy0mp12U8QBRYNbPaWqkNRKtu_agvVjPj9PkiwrPpGiDa5bBb3S8vE3PEA1XYK_rccIEJ6-d8ooX4Vhp8AbH9VL-lX0gcuV3N4FVTkQaCg_yOiA9I5wmCFS3Iqw55zMjNl4dC5lEk8Rklz3-ec8HSMORSAlPb-JJEou0ARLvhH8RT2P4tMhMO4EtC"/>
+<div class="absolute -bottom-4 -left-4 w-24 h-24 bg-primary-container z-[-1]"></div>
+</div>
+</div>
+</section>
+<!-- Section 2: Notre Histoire -->
+<section class="py-grid-unit bg-surface-container-low border-b border-grid">
+<div class="px-margin-desktop">
+<div class="mb-16">
+<span class="font-label-caps text-label-caps text-surface-tint">RÉTROSPECTIVE</span>
+<h2 class="font-headline-lg text-headline-lg mt-2 text-primary">Notre Histoire</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<div class="lg:col-span-5 space-y-8">
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                            Née à l'aube du millénaire, SimSoft a commencé comme une vision audacieuse : simplifier la complexité industrielle par le logiciel.
+                        </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Notre parcours est marqué par une quête constante de l'excellence technique. De nos premiers scripts d'automatisation aux plateformes cloud natives d'aujourd'hui, nous n'avons jamais cessé de repousser les limites de ce que la technologie peut accomplir pour nos clients.
+                        </p>
+<div class="border-l-4 border-primary p-6 bg-surface-container">
+<p class="italic text-on-surface">"L'innovation n'est pas un but, c'est un processus continu d'adaptation aux réalités de nos partenaires."</p>
+</div>
+</div>
+<div class="lg:col-span-7">
+<div class="space-y-0 border-l border-grid ml-4">
+<!-- Timeline Items -->
+<div class="relative pl-8 pb-12 group">
+<div class="absolute -left-[5px] top-0 w-[9px] h-[9px] bg-primary"></div>
+<span class="font-label-caps text-label-caps text-primary">2000</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-2 text-[24px]">Fondation</h3>
+<p class="text-on-surface-variant mt-2">Création de SimSoft à Lyon par un collectif d'ingénieurs passionnés.</p>
+</div>
+<div class="relative pl-8 pb-12 group">
+<div class="absolute -left-[5px] top-0 w-[9px] h-[9px] bg-outline"></div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">2005</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-2 text-[24px]">Premières Solutions</h3>
+<p class="text-on-surface-variant mt-2">Lancement de notre suite logicielle phare pour la gestion industrielle.</p>
+</div>
+<div class="relative pl-8 pb-12 group">
+<div class="absolute -left-[5px] top-0 w-[9px] h-[9px] bg-outline"></div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">2012</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-2 text-[24px]">Partenariats Stratégiques</h3>
+<p class="text-on-surface-variant mt-2">Expansion européenne et alliances avec les leaders du hardware.</p>
+</div>
+<div class="relative pl-8 group">
+<div class="absolute -left-[5px] top-0 w-[9px] h-[9px] bg-primary"></div>
+<span class="font-label-caps text-label-caps text-primary">AUJOURD'HUI</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-2 text-[24px]">Transformation Globale</h3>
+<p class="text-on-surface-variant mt-2">Leader de la transformation digitale 4.0 avec plus de 500 projets actifs.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Notre Mission -->
+<section class="py-grid-unit bg-surface border-b border-grid oblique-split relative">
+<div class="px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+<div class="order-2 lg:order-1">
+<img class="w-full aspect-video object-cover border border-grid grayscale contrast-125" data-alt="A macro detailed shot of complex fiber optic cables glowing with soft blue and white light within a dark server room environment. The composition is technical and precise, using a shallow depth of field to emphasize the intricate connectivity. The aesthetic is industrial and advanced, utilizing a palette of deep navy, slate gray, and bright electric blue highlights to signify high-speed data and modern digital infrastructure." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSyfpDRLbuCJuVg05hGZPsJD7EzwULnrTaOT3zoAjognw76MpUZUtd5h4Xdch14PF1oFKioweFOUP023F3v3qrg0dfYG1CEYb1JcepratWSrzzGHj_czV1hmytwOmfoMp_7gO-PZrvEdr40YqB4BgIGoIWsjxBfDF6TVt8bcnCUjVXUrlnweejHM4r4MXv_ZxlLavsRS1j1x-Nd4LEAEkzu0Wif4_CNoJXJeqPfmHxPQ21qYOg0VZj"/>
+</div>
+<div class="order-1 lg:order-2 lg:pl-12 pb-12 lg:pb-0">
+<span class="font-label-caps text-label-caps text-tertiary-container mb-4 block">NOTRE RAISON D'ÊTRE</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Simplifier l'Innovation Industrielle</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                        Notre mission est de fournir les outils technologiques qui permettent aux entreprises de prospérer dans un monde de plus en plus complexe.
+                    </p>
+<ul class="space-y-4">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">verified_user</span>
+<div>
+<strong class="text-on-surface block">Accompagnement de Proximité</strong>
+<p class="text-on-surface-variant text-sm">Nous ne sommes pas que des fournisseurs, nous sommes vos partenaires de croissance.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">settings_suggest</span>
+<div>
+<strong class="text-on-surface block">Excellence Technique</strong>
+<p class="text-on-surface-variant text-sm">Le code propre et les architectures robustes sont dans notre ADN.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Section 4: Notre Vision & Valeurs -->
+<section class="py-grid-unit bg-surface-container-highest">
+<div class="px-margin-desktop">
+<div class="text-center mb-16 max-w-2xl mx-auto">
+<span class="font-label-caps text-label-caps text-surface-tint">CULTURE D'ENTREPRISE</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mt-4">Nos Valeurs Cardinales</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-grid">
+<!-- Value Card 1 -->
+<div class="p-10 bg-surface-container-lowest border-r border-b border-grid hover:bg-primary group transition-colors duration-500">
+<span class="material-symbols-outlined text-4xl text-primary group-hover:text-on-primary mb-6 transition-colors">lightbulb</span>
+<h3 class="font-headline-lg text-headline-lg text-[22px] text-on-surface group-hover:text-on-primary mb-4 transition-colors">Innovation</h3>
+<p class="text-on-surface-variant group-hover:text-on-primary/80 transition-colors">Explorer l'inexploré pour anticiper les besoins technologiques de demain.</p>
+</div>
+<!-- Value Card 2 -->
+<div class="p-10 bg-surface-container-lowest border-r border-b border-grid hover:bg-primary group transition-colors duration-500">
+<span class="material-symbols-outlined text-4xl text-primary group-hover:text-on-primary mb-6 transition-colors">workspace_premium</span>
+<h3 class="font-headline-lg text-headline-lg text-[22px] text-on-surface group-hover:text-on-primary mb-4 transition-colors">Excellence</h3>
+<p class="text-on-surface-variant group-hover:text-on-primary/80 transition-colors">Chaque ligne de code, chaque interface est polie pour la perfection opérationnelle.</p>
+</div>
+<!-- Value Card 3 -->
+<div class="p-10 bg-surface-container-lowest border-r border-b border-grid hover:bg-primary group transition-colors duration-500">
+<span class="material-symbols-outlined text-4xl text-primary group-hover:text-on-primary mb-6 transition-colors">security</span>
+<h3 class="font-headline-lg text-headline-lg text-[22px] text-on-surface group-hover:text-on-primary mb-4 transition-colors">Fiabilité</h3>
+<p class="text-on-surface-variant group-hover:text-on-primary/80 transition-colors">Des systèmes qui fonctionnent, peu importe la charge ou les conditions.</p>
+</div>
+<!-- Value Card 4 -->
+<div class="p-10 bg-surface-container-lowest border-r border-b border-grid hover:bg-primary group transition-colors duration-500">
+<span class="material-symbols-outlined text-4xl text-primary group-hover:text-on-primary mb-6 transition-colors">groups</span>
+<h3 class="font-headline-lg text-headline-lg text-[22px] text-on-surface group-hover:text-on-primary mb-4 transition-colors">Engagement</h3>
+<p class="text-on-surface-variant group-hover:text-on-primary/80 transition-colors">Un investissement total dans la réussite des projets de nos clients.</p>
+</div>
+<!-- Value Card 5 -->
+<div class="p-10 bg-surface-container-lowest border-r border-b border-grid hover:bg-primary group transition-colors duration-500">
+<span class="material-symbols-outlined text-4xl text-primary group-hover:text-on-primary mb-6 transition-colors">handshake</span>
+<h3 class="font-headline-lg text-headline-lg text-[22px] text-on-surface group-hover:text-on-primary mb-4 transition-colors">Collaboration</h3>
+<p class="text-on-surface-variant group-hover:text-on-primary/80 transition-colors">La co-création est le moteur de nos solutions les plus efficaces.</p>
+</div>
+<!-- Value Card 6 -->
+<div class="p-10 bg-surface-container-lowest border-r border-b border-grid hover:bg-primary group transition-colors duration-500">
+<span class="material-symbols-outlined text-4xl text-primary group-hover:text-on-primary mb-6 transition-colors">sentiment_very_satisfied</span>
+<h3 class="font-headline-lg text-headline-lg text-[22px] text-on-surface group-hover:text-on-primary mb-4 transition-colors">Satisfaction Client</h3>
+<p class="text-on-surface-variant group-hover:text-on-primary/80 transition-colors">Notre indicateur de performance ultime est le succès de nos partenaires.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: SimSoft en chiffres -->
+<section class="bg-primary py-24 text-on-primary border-y border-grid">
+<div class="px-margin-desktop">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-gutter text-center">
+<div>
+<div class="font-display text-display mb-2">20+</div>
+<div class="font-label-caps text-label-caps tracking-widest text-primary-fixed">ANS D'EXPÉRIENCE</div>
+</div>
+<div>
+<div class="font-display text-display mb-2">500+</div>
+<div class="font-label-caps text-label-caps tracking-widest text-primary-fixed">PROJETS LIVRÉS</div>
+</div>
+<div>
+<div class="font-display text-display mb-2">30+</div>
+<div class="font-label-caps text-label-caps tracking-widest text-primary-fixed">PARTENAIRES</div>
+</div>
+<div>
+<div class="font-display text-display mb-2">12</div>
+<div class="font-label-caps text-label-caps tracking-widest text-primary-fixed">SECTEURS CLÉS</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: Notre Équipe -->
+<section class="py-grid-unit bg-surface overflow-hidden">
+<div class="px-margin-desktop">
+<div class="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<span class="font-label-caps text-label-caps text-surface-tint">TALENTS & EXPERTISE</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mt-2">L'Équipe Dirigeante</h2>
+</div>
+<p class="max-w-md text-on-surface-variant">Un mix d'expérience industrielle et d'audace technologique pour piloter vos projets.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Team Member 1 -->
+<div class="group relative">
+<div class="aspect-[3/4] overflow-hidden border border-grid bg-surface-container mb-4">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="A professional portrait of a senior executive male in a dark grey tailored suit. He has a confident, calm expression. The background is a blurred office environment with cool industrial lighting. The photo is high-resolution, sharp, and uses a monochromatic color scheme with subtle warm skin tones to maintain a professional, corporate light-mode feeling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc7-EY2UB8_gizMLdpPPxlzef-OvxvYHr6eXtzQtsTnUhhRNlYHWHTEzD7imb4-o4AE1__dVBadEsujdRW8kcLm7vCnaKxPyzlpvqnPUGtoSsd8axERc7Ijnl31P1_5OR_uD6rXmnBff2Pc4fZqtjo6FxnWbl-TWb2E-jr7WRRvbrYdFK6ydXCoohf5rr1AE4JLD6Ou0l-isqumodLliyq4Zf0pVPHwMY8D8ss8mwI-2iZzvG45n66"/>
+</div>
+<div class="absolute -top-2 -right-2 bg-primary text-on-primary w-10 h-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-sm">link</span>
+</div>
+<h4 class="font-headline-lg text-headline-lg text-[20px] text-on-surface">Jean-Marc Simoni</h4>
+<p class="font-label-caps text-label-caps text-surface-tint mb-2">FONDATEUR & CEO</p>
+<p class="text-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-300">Visionnaire tech avec 25 ans d'expérience dans l'industrie logicielle.</p>
+</div>
+<!-- Team Member 2 -->
+<div class="group relative">
+<div class="aspect-[3/4] overflow-hidden border border-grid bg-surface-container mb-4">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="A professional portrait of a female executive in her 40s wearing a minimalist white blouse. She is smiling professionally against a background of a modern architectural interior with glass and steel. The lighting is bright and airy, conforming to a premium light-mode aesthetic. The image is crisp, conveying intelligence, reliability, and modern leadership." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQYZ_kTxjYXCy4Ow-R45Yo0W6rEIYJoi_HeGu93CwIFv0Gp7gLApMKQbwyctXdovBUAhJrN2qoJR4EjuDOYfCqCfyRA0V0hfWLSece_VFp609hdwUZSZ5Bkzodkzz4KZaQcdcqKaw1GawdGicCyJKaee3pDkj2Axm4_jLNl7BCxyNw6MGldZdsRvM15TYLKn062hZwJ58t_cpf0lCnIxaasMeQZfRcN0wp0DlEJhJSB8vdDEmGat15"/>
+</div>
+<h4 class="font-headline-lg text-headline-lg text-[20px] text-on-surface">Elena Rodriguez</h4>
+<p class="font-label-caps text-label-caps text-surface-tint mb-2">CTO</p>
+<p class="text-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-300">Experte en systèmes distribués et intelligence artificielle appliquée.</p>
+</div>
+<!-- Team Member 3 -->
+<div class="group relative">
+<div class="aspect-[3/4] overflow-hidden border border-grid bg-surface-container mb-4">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="A high-end corporate portrait of a male professional in his 30s with short hair and glasses. He is wearing a dark navy blazer over a light blue shirt. The background is a clean, minimalist studio setting with neutral tones. The aesthetic is sharp, clean, and modern, emphasizing professional competence and technological focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIZN2dGkc9jh2TGVMkrFexus2YAyzfA3wQNEIjbqsfxE90lxlJpnkuxlAH1LqQvygtZQi7c_UCYlUcgs2Ac_1EraJevALcsqeogO4aMmQm0hh_J3Fcu_p1TZ-Jsyup82FF6X7gFPBjXbudjam676cCEH2t_ZGawOWQbBjwczo1nOIVRzi6hsdMPxKsKcQZaKe2ysHRcHswXclJF0DP1g2WhLocbIOpd1mokU5IBq77_T_xGBAawls9"/>
+</div>
+<h4 class="font-headline-lg text-headline-lg text-[20px] text-on-surface">Marc Dupont</h4>
+<p class="font-label-caps text-label-caps text-surface-tint mb-2">DIRECTEUR PROJETS</p>
+<p class="text-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-300">Garant de la qualité et du respect des délais pour tous nos partenaires.</p>
+</div>
+<!-- Team Member 4 -->
+<div class="group relative">
+<div class="aspect-[3/4] overflow-hidden border border-grid bg-surface-container mb-4">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="A professional headshot of a middle-aged woman with a kind but authoritative expression. She is wearing a dark grey jacket and a simple silver necklace. The setting is a brightly lit corporate lobby with large windows. The lighting is high-key, creating a very clean and professional light-mode appearance. The focus is sharp on her features, expressing warmth and leadership." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKnvtoaSGSkZqAlsh6f1RTSlDTSwUHtQsfDMn_TriDXDttUGyZkXz9OVC08rsUSiBzwcfXo_-JM6iSt-RK77TRoR66UlKZhhuQtBViScc4Vh9ux1ipESMgtq6aggZ7dLMSWHOMlEpm9Rn7sWqi_5YtqjSYc1MPUWQH8lmWyD7dsKGHgJ2GpmrtOb4s5MebCLJMknG3nsUF9h4thDChd_S5BGA2XJIk38LUz8WWH8t_7PaKkDUydYcr"/>
+</div>
+<h4 class="font-headline-lg text-headline-lg text-[20px] text-on-surface">Sophie Laurent</h4>
+<p class="font-label-caps text-label-caps text-surface-tint mb-2">VP CUSTOMER SUCCESS</p>
+<p class="text-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-300">Dédiée à l'expérience client et au suivi post-implémentation long terme.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 7: Partenaires -->
+<section class="py-16 bg-surface-container-low border-y border-grid">
+<div class="px-margin-desktop">
+<p class="font-label-caps text-label-caps text-center text-outline mb-12">ILS NOUS FONT CONFIANCE</p>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center opacity-60">
+<div class="flex justify-center"><div class="h-12 w-32 bg-outline-variant/30 flex items-center justify-center font-black text-outline">LOGO 1</div></div>
+<div class="flex justify-center"><div class="h-12 w-32 bg-outline-variant/30 flex items-center justify-center font-black text-outline">LOGO 2</div></div>
+<div class="flex justify-center"><div class="h-12 w-32 bg-outline-variant/30 flex items-center justify-center font-black text-outline">LOGO 3</div></div>
+<div class="flex justify-center"><div class="h-12 w-32 bg-outline-variant/30 flex items-center justify-center font-black text-outline">LOGO 4</div></div>
+<div class="flex justify-center"><div class="h-12 w-32 bg-outline-variant/30 flex items-center justify-center font-black text-outline">LOGO 5</div></div>
+<div class="flex justify-center"><div class="h-12 w-32 bg-outline-variant/30 flex items-center justify-center font-black text-outline">LOGO 6</div></div>
+</div>
+</div>
+</section>
+<!-- Section 8: Nos Locaux -->
+<section class="py-grid-unit bg-surface">
+<div class="px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter items-end mb-12">
+<div class="lg:col-span-2">
+<span class="font-label-caps text-label-caps text-surface-tint">CADRE DE TRAVAIL</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mt-2">Un environnement propice à l'innovation</h2>
+</div>
+<p class="text-on-surface-variant">Nos bureaux sont conçus comme des hubs collaboratifs, alliant confort moderne et infrastructures technologiques de pointe.</p>
+</div>
+<div class="relative h-[500px] border border-grid overflow-hidden group">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000" data-alt="A wide panoramic photograph of a modern, open-plan corporate office. The space features large windows letting in natural daylight, minimalist furniture, and plenty of green plants. The architecture uses exposed concrete and industrial metal elements. The lighting is bright and even, reinforcing the professional light-mode aesthetic. It feels spacious, clean, and highly productive." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF3lZrvcloA8byjhB1Jl0WyIj8qB5CpTLU7MsF7cLMAdaaUJ99e8uWezzght1Y6I-QoMjXUTFxRUPLlaEZd2my-6cMgTdAqDIDVy93EcVXh4ohsqpuH95ZEAXmiJ8ZQi9KwVXDpY9VcQX6m9AInCt8kOMfzfUWG97CrDsem4Vbi94xlRfD2trub3en3Wsp_0eWM44BwjJ_-9QTcnPThjPf0wteGV0GMoSX37N3wmk3cg3VHGU4wbCI"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+<span class="font-label-caps text-label-caps text-on-primary bg-primary px-6 py-3">EXPLORER NOS LOCAUX</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 9: Notre Présence -->
+<section class="py-grid-unit bg-surface border-t border-grid">
+<div class="px-margin-desktop grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<div class="lg:col-span-4 flex flex-col justify-center">
+<span class="font-label-caps text-label-caps text-surface-tint mb-4 block">NOUS TROUVER</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8">Contactez-nous</h2>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<div>
+<p class="font-bold text-on-surface">Siège Social</p>
+<p class="text-on-surface-variant">128 Rue de l'Innovation<br/>69007 Lyon, France</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary">call</span>
+<div>
+<p class="font-bold text-on-surface">Téléphone</p>
+<p class="text-on-surface-variant">+33 (0)4 72 00 00 00</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary">mail</span>
+<div>
+<p class="font-bold text-on-surface">E-mail</p>
+<p class="text-on-surface-variant">contact@simsoft-tech.com</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-8 h-[450px] border border-grid relative">
+<div class="absolute inset-0 grid-bg opacity-20"></div>
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist vector-style map of a city center with prominent landmarks marked by professional pin icons. The color palette is light mode consistent, featuring soft greys, whites, and primary blue accents for the pins. The image is high-contrast and very readable, serving as a functional yet stylish location visual for a corporate contact page." data-location="Lyon, France" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcOuU-2GkR8eWgLTeutNNkDW-rQNJMP4JBLKOCk-aj7864bSLKxz1vjmRchgauEAF5sH9Wjyr9asHn51YDiPtmK_-xw6uI-OYFnvQbwfoRDeDfiWv7rAPKAqpBaYZr8GYeGOfls0_db5FZYgnAD5bg5dNl69q_YlPHB_NIT0Mgsa5OEqLKqj1fsckxhr-j0aaMywwcm0mdjj_Kd8M1coSPLoIvYs8s07q7utp3yyNooLkE9R10YLcA"/>
+</div>
+</div>
+</section>
+<!-- Section 10: CTA Final -->
+<section class="py-24 bg-surface-container-highest relative overflow-hidden">
+<div class="px-margin-desktop text-center relative z-10">
+<h2 class="font-headline-lg text-headline-lg md:text-display text-primary mb-6">Construisons ensemble votre transformation digitale</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">
+                    Prêt à franchir le cap ? Nos experts sont à votre disposition pour analyser vos besoins et concevoir votre futur technologique.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-primary text-on-primary px-10 py-5 font-label-caps text-label-caps tracking-widest hover:bg-primary-container transition-all">
+                        NOUS CONTACTER
+                    </button>
+<button class="bg-transparent text-primary border border-primary px-10 py-5 font-label-caps text-label-caps tracking-widest hover:bg-primary hover:text-on-primary transition-all">
+                        DEMANDER UN AUDIT
+                    </button>
+</div>
+</div>
+<!-- Decorative Element -->
+<div class="absolute bottom-0 right-0 w-1/3 h-1/2 bg-primary/5 -skew-x-12 transform translate-x-1/2"></div>
+</section>
+</main>
+<script>
+        // Subtle micro-interactions
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                // Potential for more advanced GSAP or simple hover logic
+            });
+        });
+
+        // Intersection Observer for fade-in effects
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        // Add reveal classes to sections for a smooth load
+        document.querySelectorAll('section > div').forEach(div => {
+            div.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(div);
+        });
+    </script>
+</body></html>

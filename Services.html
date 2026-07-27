@@ -1,0 +1,442 @@
+<!DOCTYPE html><html class="light" lang="fr" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Nos Services | SIMSOFT TECH</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#40484c",
+                        "primary": "#003543",
+                        "inverse-on-surface": "#eff1f2",
+                        "surface-variant": "#e1e3e4",
+                        "secondary-fixed": "#e4e2e2",
+                        "on-tertiary-fixed": "#2d1600",
+                        "on-primary-fixed": "#001f28",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "background": "#f8f9fb",
+                        "outline": "#70787c",
+                        "on-secondary-fixed-variant": "#464747",
+                        "tertiary": "#4a2700",
+                        "surface-tint": "#00677f",
+                        "tertiary-fixed-dim": "#ffb876",
+                        "on-primary-fixed-variant": "#004e60",
+                        "border-grid": "rgba(44, 51, 69, 0.12)",
+                        "surface-container": "#edeeef",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "on-tertiary-fixed-variant": "#6b3b01",
+                        "primary-fixed-dim": "#86d1ec",
+                        "tertiary-container": "#6a3a00",
+                        "inverse-primary": "#86d1ec",
+                        "on-tertiary-container": "#eaa565",
+                        "secondary": "#5e5e5e",
+                        "on-surface": "#191c1d",
+                        "surface-background": "#f7fafc",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#c0c8cc",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#004d60",
+                        "text-high-contrast": "#1b1c1c",
+                        "surface-container-high": "#e7e8ea",
+                        "surface": "#f7fafc",
+                        "inverse-surface": "#2e3132",
+                        "on-background": "#191c1d",
+                        "primary-fixed": "#b6eaff",
+                        "surface-dim": "#d9dadc",
+                        "surface-bright": "#f8f9fb",
+                        "secondary-container": "#e1dfdf",
+                        "on-primary-container": "#74bfd9",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#ffdcc0",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#636262",
+                        "surface-container-low": "#f2f4f5",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "grid-unit": "40px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "margin-mobile": "24px"
+                    },
+                    "fontFamily": {
+                        "display": ["Hanken Grotesk"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "display": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .oblique-split {
+            clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+        }
+        .oblique-split-reverse {
+            clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%);
+        }
+        .grid-pattern {
+            background-image: radial-gradient(circle, #70787c 1px, transparent 1px);
+            background-size: 32px 32px;
+            opacity: 0.1;
+        }
+        .glow-effect {
+            background: radial-gradient(circle at center, rgba(134, 209, 236, 0.15) 0%, transparent 70%);
+        }
+        .premium-card {
+            background: #ffffff;
+            border: 1px solid rgba(0, 53, 67, 0.08);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .premium-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+            border-color: rgba(0, 103, 127, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-background font-body-md overflow-x-hidden">
+<!-- 1. Hero Section -->
+<section class="relative bg-white pt-32 pb-48 px-margin-mobile md:px-margin-desktop overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 grid-pattern"></div>
+<div class="absolute top-0 right-0 w-[800px] h-[800px] glow-effect -translate-y-1/2 translate-x-1/4"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div>
+<div class="flex items-center gap-4 mb-6">
+<div class="h-[2px] w-12 bg-surface-tint"></div>
+<span class="font-label-caps text-label-caps text-surface-tint uppercase tracking-widest">Architectures Industrielles</span>
+</div>
+<h1 class="font-display text-headline-lg-mobile md:text-display mb-8 leading-tight text-text-high-contrast">Nos Services de <br><span class="text-surface-tint">Pointe</span></h1>
+<p class="font-body-lg text-on-surface-variant max-w-xl mb-10 leading-relaxed">
+                Nous transformons les fondations numériques des leaders de l'industrie. Simsoft Technologies déploie des solutions de pointe pour synchroniser vos opérations critiques avec une précision absolue.
+            </p>
+<div class="flex flex-wrap gap-4">
+<a class="px-8 py-4 bg-primary text-on-primary font-label-caps text-label-caps tracking-widest hover:bg-surface-tint transition-all shadow-lg shadow-primary/10" href="#services">DÉCOUVRIR NOS SOLUTIONS</a>
+</div>
+</div>
+<div class="relative lg:block">
+<div class="absolute -inset-4 border border-border-grid rotate-3 pointer-events-none"></div>
+<div class="relative bg-surface-container-high aspect-[4/3] overflow-hidden shadow-2xl">
+<img alt="Industrial Technology" class="w-full h-full object-cover grayscale mix-blend-multiply hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIyOjLT4Mpz-nDXPc_VI3qjjthFETCs4TFxsq6-mgoD38_SK5P9uG-MCzww4Y1zO1k7UInzHlony_o04Fm5uuMzauZwQkBJZif9_Nm91CH1maVKephCYW308X5J_ZJLWHsaZDdrTeaSgf-RL8c-wF4uRIje58jKiG0heEz0FPTQAzwzfFiNSA13nJrlBVqVPnAqHHPI9qAbda57CUEgQbk5uzVV7ztNorO2_aYoVLC5jP02ApWwYyTKARz_3r_uxrU6FPII1nqsSc">
+<div class="absolute bottom-0 right-0 bg-primary p-8">
+<span class="font-label-caps text-on-primary tracking-[0.2em]">EST. 2000</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Value Proposition (Dark Block Contrast) -->
+<section class="relative bg-primary py-32 px-margin-mobile md:px-margin-desktop oblique-split -mt-20 z-20 text-white">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="order-2 lg:order-1"><div class="relative group"><img class="w-full h-auto shadow-2xl transition-all duration-500 group-hover:scale-[1.02] rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACLLKTpfs9QtLciK9W18y6i5illxCT1pfLMVmzej4gW-q_FDT77-656zn306LDuVVLKCFrrCzmO2MTSQ0MfMY_AgEXanQ4KUH4wCduXkq1oFX7lwh_L4BdMb547B7v4pTbWXNaCk-d_bBqCsgSby3Pf1GMrPXyGsYqNxaI73JB7w8S_isakqO_PugXSzA_Q_0HqXSTDBkSrXGG3eLb-SOAoSeyFxpRaK4z5CT0z9oEAnZyStK_HtqYcmUSozaEGvLmu0cN8rbR0s8"><div class="absolute -top-6 -left-6 border border-surface-tint/30 w-24 h-24 pointer-events-none bg-surface-tint/10 -z-10"></div><div class="absolute -bottom-6 -right-6 border border-surface-tint/30 w-24 h-24 pointer-events-none bg-surface-tint/10 -z-10"></div></div></div>
+<div class="order-1 lg:order-2"><h2 class="font-display text-headline-lg-mobile md:text-headline-lg mb-8 font-extrabold tracking-tight text-white">Un Accompagnement de Bout en Bout</h2><p class="font-body-lg mb-12 leading-relaxed text-on-primary/80">Plus qu'un fournisseur de logiciels, Simsoft est votre partenaire stratégique. De l'audit initial à la maintenance prédictive, nous assurons la pérennité de votre écosystème numérique.</p><div class="grid grid-cols-1 gap-6"><div class="bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-white/10 transition-all group backdrop-blur-sm"><div class="flex items-start gap-5"><div class="mt-1 p-2 bg-surface-tint rounded-lg shadow-lg shadow-surface-tint/20"><span class="material-symbols-outlined text-2xl block text-white">verified</span></div><div><p class="font-display font-bold text-xl text-white mb-1">Expertise sectorielle profonde</p><p class="text-on-primary/70 leading-relaxed text-sm">+24 ans de maîtrise des flux industriels complexes et critiques.</p></div></div></div><div class="bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-white/10 transition-all group backdrop-blur-sm"><div class="flex items-start gap-5"><div class="mt-1 p-2 bg-surface-tint rounded-lg shadow-lg shadow-surface-tint/20"><span class="material-symbols-outlined text-2xl block text-white">hub</span></div><div><p class="font-display font-bold text-xl text-white mb-1">Intégration multi-systèmes</p><p class="text-on-primary/70 leading-relaxed text-sm">Interopérabilité native et transparente avec vos outils existants.</p></div></div></div><div class="bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-white/10 transition-all group backdrop-blur-sm"><div class="flex items-start gap-5"><div class="mt-1 p-2 bg-surface-tint rounded-lg shadow-lg shadow-surface-tint/20"><span class="material-symbols-outlined text-2xl block text-white">support</span></div><div><p class="font-display font-bold text-xl text-white mb-1">Support Haute Disponibilité</p><p class="text-on-primary/70 leading-relaxed text-sm">Assistance réactive 24/7 pour garantir zéro arrêt de production.</p></div></div></div></div></div>
+</div>
+</section>
+<!-- 3. Detailed Services Grid -->
+<section class="py-32 px-margin-mobile md:px-margin-desktop bg-surface relative" id="services">
+<div class="max-w-7xl mx-auto mb-20 text-center">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-[0.3em] mb-4 block">Notre Portfolio</span>
+<h2 class="font-display text-headline-lg text-text-high-contrast">Services Spécialisés</h2>
+</div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 gap-10">
+<!-- Service 1 -->
+<div class="premium-card p-10 flex flex-col opacity-100 transition-all duration-700 hover:border-surface-tint">
+<span class="material-symbols-outlined text-5xl text-surface-tint mb-8 block text-center">strategy</span>
+<h3 class="font-display text-xl font-bold mb-4 leading-tight text-text-high-contrast">Conseil en transformation digitale</h3>
+<p class="text-on-surface-variant text-sm mb-8 flex-grow">Alignement de votre vision stratégique avec des solutions numériques fluides et performantes.</p>
+<div class="pt-6 border-t border-border-grid">
+<p class="font-label-caps text-[10px] text-outline mb-2 text-on-surface-variant">EXPERTISE</p>
+<p class="font-label-caps text-[12px] text-primary text-on-surface-variant">Audit SI, Roadmap 4.0</p>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="premium-card p-10 flex flex-col opacity-100 transition-all duration-700 hover:border-surface-tint">
+<span class="material-symbols-outlined text-5xl text-surface-tint mb-8 block text-center">settings_applications</span>
+<h3 class="font-display text-xl font-bold mb-4 leading-tight text-text-high-contrast">Intégration ERP</h3>
+<p class="text-on-surface-variant text-sm mb-8 flex-grow">Centralisation de vos processus critiques avec des solutions ERP robustes et évolutives.</p>
+<div class="pt-6 border-t border-border-grid">
+<p class="font-label-caps text-[10px] text-outline mb-2 text-on-surface-variant">PARTENARIATS</p>
+<p class="font-label-caps text-[12px] text-primary text-on-surface-variant">Divalto ERP, WaveSoft</p>
+</div>
+</div>
+<!-- Service 3 -->
+<div class="premium-card p-10 flex flex-col opacity-100 transition-all duration-700 hover:border-surface-tint">
+<span class="material-symbols-outlined text-5xl text-surface-tint mb-8 block text-center">code</span>
+<h3 class="font-display text-xl font-bold mb-4 leading-tight text-text-high-contrast">Développement spécifique</h3>
+<p class="text-on-surface-variant text-sm mb-8 flex-grow">Conception d'outils sur mesure répondant à vos défis industriels les plus complexes.</p>
+<div class="pt-6 border-t border-border-grid">
+<p class="font-label-caps text-[10px] text-outline mb-2 text-on-surface-variant">STACK TECH</p>
+<p class="font-label-caps text-[12px] text-primary text-on-surface-variant">.NET, C#, ASP.NET CORE</p>
+</div>
+</div>
+<!-- Service 4 -->
+<div class="premium-card p-10 flex flex-col opacity-100 transition-all duration-700 hover:border-surface-tint">
+<span class="material-symbols-outlined text-5xl text-surface-tint mb-8 block text-center">precision_manufacturing</span>
+<h3 class="font-display text-xl font-bold mb-4 leading-tight text-text-high-contrast">Déploiement GMAO</h3>
+<p class="text-on-surface-variant text-sm mb-8 flex-grow">Optimisation de la maintenance de vos actifs techniques via des solutions assistées.</p>
+<div class="pt-6 border-t border-border-grid">
+<p class="font-label-caps text-[10px] text-outline mb-2 text-on-surface-variant">SOLUTIONS</p>
+<p class="font-label-caps text-[12px] text-primary text-on-surface-variant">First Parc, Mobilité</p>
+</div>
+</div>
+<!-- Service 5 -->
+<div class="premium-card p-10 flex flex-col opacity-100 transition-all duration-700 hover:border-surface-tint">
+<span class="material-symbols-outlined text-5xl text-surface-tint mb-8 block text-center">lan</span>
+<h3 class="font-display text-xl font-bold mb-4 leading-tight text-text-high-contrast">Installation &amp; Configuration</h3>
+<p class="text-on-surface-variant text-sm mb-8 flex-grow">Déploiement clé en main pour une mise en service immédiate et sécurisée sur site.</p>
+<div class="pt-6 border-t border-border-grid">
+<p class="font-label-caps text-[10px] text-outline mb-2 text-on-surface-variant">DEPLOY</p>
+<p class="font-label-caps text-[12px] text-primary text-on-surface-variant">Infrastructure On-Premise</p>
+</div>
+</div>
+<!-- Service 6 -->
+<div class="premium-card p-10 flex flex-col opacity-100 transition-all duration-700 hover:border-surface-tint">
+<span class="material-symbols-outlined text-5xl text-surface-tint mb-8 block text-center">school</span>
+<h3 class="font-display text-xl font-bold mb-4 leading-tight text-text-high-contrast">Formation utilisateurs</h3>
+<p class="text-on-surface-variant text-sm mb-8 flex-grow">Accélération de l'adoption par vos équipes pour un retour sur investissement maximal.</p>
+<div class="pt-6 border-t border-border-grid">
+<p class="font-label-caps text-[10px] text-outline mb-2 text-on-surface-variant">MÉTHODES</p>
+<p class="font-label-caps text-[12px] text-primary text-on-surface-variant">E-learning, Coaching</p>
+</div>
+</div>
+<!-- Service 7 -->
+<div class="premium-card p-10 flex flex-col opacity-100 transition-all duration-700 hover:border-surface-tint">
+<span class="material-symbols-outlined text-5xl text-surface-tint mb-8 block text-center">support_agent</span>
+<h3 class="font-display text-xl font-bold mb-4 leading-tight text-text-high-contrast">Support &amp; Maintenance</h3>
+<p class="text-on-surface-variant text-sm mb-8 flex-grow">Garantie de continuité opérationnelle avec une assistance réactive 24/7.</p>
+<div class="pt-6 border-t border-border-grid">
+<p class="font-label-caps text-[10px] text-outline mb-2 text-on-surface-variant">SLA</p>
+<p class="font-label-caps text-[12px] text-primary text-on-surface-variant">SLA 4h, Monitoring</p>
+</div>
+</div>
+<!-- Service 8 -->
+<div class="premium-card p-10 flex flex-col opacity-100 transition-all duration-700 hover:border-surface-tint">
+<span class="material-symbols-outlined text-5xl text-surface-tint mb-8 block text-center">database</span>
+<h3 class="font-display text-xl font-bold mb-4 leading-tight text-text-high-contrast">Migration de données</h3>
+<p class="text-on-surface-variant text-sm mb-8 flex-grow">Sécurisation de vos flux d'informations historiques lors du passage vers vos nouveaux SI.</p>
+<div class="pt-6 border-t border-border-grid">
+<p class="font-label-caps text-[10px] text-outline mb-2 text-on-surface-variant">TECHNOLOGIE</p>
+<p class="font-label-caps text-[12px] text-primary text-on-surface-variant">SQL Server, ETL</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Tech Stack -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-white border-y border-border-grid">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-widest block mb-2">Technological Core</span>
+<h2 class="font-display text-headline-lg text-text-high-contrast">Notre Stack Technologique</h2>
+</div>
+<div class="flex flex-wrap justify-center gap-6 px-4">
+<span class="px-8 py-3 bg-surface border border-border-grid font-label-caps text-label-caps text-primary hover:border-surface-tint hover:text-surface-tint transition-all cursor-default">.NET</span>
+<span class="px-8 py-3 bg-surface border border-border-grid font-label-caps text-label-caps text-primary hover:border-surface-tint hover:text-surface-tint transition-all cursor-default">C#</span>
+<span class="px-8 py-3 bg-surface border border-border-grid font-label-caps text-label-caps text-primary hover:border-surface-tint hover:text-surface-tint transition-all cursor-default">ASP.NET CORE</span>
+<span class="px-8 py-3 bg-surface border border-border-grid font-label-caps text-label-caps text-primary hover:border-surface-tint hover:text-surface-tint transition-all cursor-default">SQL SERVER</span>
+<span class="px-8 py-3 bg-surface border border-border-grid font-label-caps text-label-caps text-primary hover:border-surface-tint hover:text-surface-tint transition-all cursor-default">REST API</span>
+<span class="px-8 py-3 bg-surface border border-border-grid font-label-caps text-label-caps text-primary hover:border-surface-tint hover:text-surface-tint transition-all cursor-default">DIVALTO</span>
+<span class="px-8 py-3 bg-surface border border-border-grid font-label-caps text-label-caps text-primary hover:border-surface-tint hover:text-surface-tint transition-all cursor-default">WAVESOFT</span>
+<span class="px-8 py-3 bg-surface border border-border-grid font-label-caps text-label-caps text-primary hover:border-surface-tint hover:text-surface-tint transition-all cursor-default">FIRST PARC</span>
+<span class="px-8 py-3 bg-surface border border-border-grid font-label-caps text-label-caps text-primary hover:border-surface-tint hover:text-surface-tint transition-all cursor-default">QUORION</span>
+<span class="px-8 py-3 bg-surface border border-border-grid font-label-caps text-label-caps text-primary hover:border-surface-tint hover:text-surface-tint transition-all cursor-default">AZURE</span>
+</div>
+</div>
+</section>
+<!-- 5. Methodology Timeline -->
+<section class="py-32 px-margin-mobile md:px-margin-desktop bg-surface-container-low oblique-split-reverse overflow-hidden relative">
+<div class="max-w-7xl mx-auto">
+<div class="mb-20">
+<span class="font-label-caps text-label-caps text-surface-tint uppercase tracking-widest block mb-4">NOTRE PROCESSUS</span>
+<h2 class="font-display text-headline-lg mb-6 text-text-high-contrast">Méthodologie Simsoft</h2>
+<div class="h-1.5 w-24 bg-surface-tint"></div>
+</div>
+<div class="relative">
+<!-- Timeline Line -->
+<div class="hidden lg:block absolute top-[40px] left-0 w-full h-[1px] bg-border-grid"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 relative z-10">
+<!-- Step 1 -->
+<div class="group">
+<div class="w-16 h-16 bg-primary text-on-primary flex items-center justify-center rounded-full mb-6 relative z-10 group-hover:bg-surface-tint transition-colors border-4 border-surface-container-low shadow-xl">
+<span class="font-label-caps text-lg">01</span>
+</div>
+<h4 class="font-display font-bold text-base uppercase mb-3 text-text-high-contrast">Analyse</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Audit complet de vos flux et identification des goulots.</p>
+</div>
+<!-- Step 2 -->
+<div class="group">
+<div class="w-16 h-16 bg-primary text-on-primary flex items-center justify-center rounded-full mb-6 relative z-10 group-hover:bg-surface-tint transition-colors border-4 border-surface-container-low shadow-xl">
+<span class="font-label-caps text-lg">02</span>
+</div>
+<h4 class="font-display font-bold text-base uppercase mb-3 text-text-high-contrast">Conseil</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Élaboration d'une stratégie SI alignée business.</p>
+</div>
+<!-- Step 3 -->
+<div class="group">
+<div class="w-16 h-16 bg-primary text-on-primary flex items-center justify-center rounded-full mb-6 relative z-10 group-hover:bg-surface-tint transition-colors border-4 border-surface-container-low shadow-xl">
+<span class="font-label-caps text-lg">03</span>
+</div>
+<h4 class="font-display font-bold text-base uppercase mb-3 text-text-high-contrast">Conception</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Architecture logicielle et prototypage agile.</p>
+</div>
+<!-- Step 4 -->
+<div class="group">
+<div class="w-16 h-16 bg-primary text-on-primary flex items-center justify-center rounded-full mb-6 relative z-10 group-hover:bg-surface-tint transition-colors border-4 border-surface-container-low shadow-xl">
+<span class="font-label-caps text-lg">04</span>
+</div>
+<h4 class="font-display font-bold text-base uppercase mb-3 text-text-high-contrast">Déploiement</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Installation contrôlée et tests de validation.</p>
+</div>
+<!-- Step 5 -->
+<div class="group">
+<div class="w-16 h-16 bg-primary text-on-primary flex items-center justify-center rounded-full mb-6 relative z-10 group-hover:bg-surface-tint transition-colors border-4 border-surface-container-low shadow-xl">
+<span class="font-label-caps text-lg">05</span>
+</div>
+<h4 class="font-display font-bold text-base uppercase mb-3 text-text-high-contrast">Formation</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Transfert de compétences aux utilisateurs clés.</p>
+</div>
+<!-- Step 6 -->
+<div class="group">
+<div class="w-16 h-16 bg-primary text-on-primary flex items-center justify-center rounded-full mb-6 relative z-10 group-hover:bg-surface-tint transition-colors border-4 border-surface-container-low shadow-xl">
+<span class="font-label-caps text-lg">06</span>
+</div>
+<h4 class="font-display font-bold text-base uppercase mb-3 text-text-high-contrast">Support</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Maintenance corrective et évolutive continue.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. Why SimSoft Section (Premium Dark Contrast) -->
+<section class="py-32 px-margin-mobile md:px-margin-desktop bg-white relative overflow-hidden">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div>
+<span class="font-label-caps text-label-caps text-surface-tint uppercase tracking-widest block mb-4">NOS ATOUTS</span>
+<h2 class="font-display text-headline-lg-mobile md:text-headline-lg mb-12 text-text-high-contrast">Pourquoi choisir Simsoft ?</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
+<div class="group">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-[2px] bg-surface-tint group-hover:w-12 transition-all"></div>
+<h4 class="font-display font-bold text-lg text-text-high-contrast">24 Ans d'Expérience</h4>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed pl-11">Une maîtrise éprouvée des environnements industriels critiques depuis 2000.</p>
+</div>
+<div class="group">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-[2px] bg-surface-tint group-hover:w-12 transition-all"></div>
+<h4 class="font-display font-bold text-lg text-text-high-contrast">Équipe d'Experts</h4>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed pl-11">Des ingénieurs certifiés passionnés par la résolution de problèmes complexes.</p>
+</div>
+<div class="group">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-[2px] bg-surface-tint group-hover:w-12 transition-all"></div>
+<h4 class="font-display font-bold text-lg text-text-high-contrast">Solutions Sur-Mesure</h4>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed pl-11">Nous ne vendons pas des boîtes, nous bâtissons des systèmes adaptés à vos besoins.</p>
+</div>
+<div class="group">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-[2px] bg-surface-tint group-hover:w-12 transition-all"></div>
+<h4 class="font-display font-bold text-lg text-text-high-contrast">SLA Garanti 24/7</h4>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed pl-11">La tranquillité d'esprit avec un support haute disponibilité partout en France.</p>
+</div>
+</div>
+</div>
+<div class="bg-primary p-16 relative shadow-2xl">
+<div class="absolute inset-0 grid-pattern opacity-5"></div>
+<div class="relative z-10">
+<div class="mb-12">
+<span class="font-display text-7xl text-surface-tint font-extrabold">+500</span>
+<p class="font-label-caps text-on-primary tracking-[0.2em] mt-3 text-on-surface-variant">PROJETS DÉPLOYÉS</p>
+</div>
+<div class="h-[1px] w-full bg-on-primary-container/20 mb-12"></div>
+<div>
+<span class="font-display text-7xl text-surface-tint font-extrabold">99.9%</span>
+<p class="font-label-caps text-on-primary tracking-[0.2em] mt-3 text-on-surface-variant">FIABILITÉ TECHNIQUE</p>
+</div>
+</div>
+<span class="absolute -right-10 -bottom-10 font-display text-[240px] text-white/5 font-extrabold select-none pointer-events-none">ST</span>
+</div>
+</div>
+</section>
+<!-- 7. CTA Section (Premium Light Mode) -->
+<section class="py-32 px-margin-mobile md:px-margin-desktop bg-surface border-t border-border-grid">
+<div class="max-w-4xl mx-auto text-center">
+<div class="inline-flex items-center gap-2 px-4 py-2 bg-surface-tint/10 rounded-full mb-8">
+<span class="w-2 h-2 bg-surface-tint rounded-full animate-pulse"></span>
+<span class="text-[10px] font-label-caps text-surface-tint tracking-widest uppercase">Prêt pour le futur ?</span>
+</div>
+<h2 class="font-display text-headline-lg-mobile md:text-headline-lg mb-8 leading-tight text-text-high-contrast">Prêt à accélérer votre <br>transformation digitale ?</h2>
+<p class="font-body-lg text-on-surface-variant mb-12 leading-relaxed max-w-2xl mx-auto">Discutons de vos enjeux et construisons ensemble la colonne vertébrale de votre future performance.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<a class="px-12 py-5 bg-primary text-on-primary font-label-caps text-label-caps tracking-widest hover:bg-surface-tint transition-all flex items-center justify-center gap-3 group shadow-xl shadow-primary/10" href="#">
+                CONTACTER UN EXPERT
+                <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<a class="px-12 py-5 border border-border-grid text-primary font-label-caps text-label-caps tracking-widest hover:bg-white hover:border-surface-tint transition-all flex items-center justify-center" href="#">
+                VOIR NOS RÉFÉRENCES
+            </a>
+</div>
+</div>
+</section>
+<!-- Micro-interaction Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Subtle scroll animations can be added here if needed
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-4');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.premium-card').forEach(card => {
+            card.classList.add('opacity-100', 'transition-all', 'duration-700');
+            // Cards are already styled via CSS classes
+        });
+    });
+</script>
+
+
+
+
+</body></html>

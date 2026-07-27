@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nos Clients | SimSoft Technologies</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#c0c8cc",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#2d1600",
+                        "border-grid": "rgba(44, 51, 69, 0.15)",
+                        "on-background": "#191c1d",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#e4e2e2",
+                        "tertiary-fixed-dim": "#ffb876",
+                        "on-secondary-fixed-variant": "#464747",
+                        "primary-fixed-dim": "#86d1ec",
+                        "surface-container": "#edeeef",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e1e3e4",
+                        "tertiary-fixed": "#ffdcc0",
+                        "on-surface": "#191c1d",
+                        "inverse-surface": "#2e3132",
+                        "primary": "#003543",
+                        "surface-dim": "#d9dadc",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#eaa565",
+                        "tertiary-container": "#6a3a00",
+                        "on-primary-fixed": "#001f28",
+                        "secondary-container": "#e1dfdf",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "surface-variant": "#e1e3e4",
+                        "on-surface-variant": "#40484c",
+                        "surface": "#f8f9fb",
+                        "on-secondary-container": "#636262",
+                        "primary-container": "#004d60",
+                        "inverse-on-surface": "#eff1f2",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#00677f",
+                        "primary-fixed": "#b6eaff",
+                        "on-tertiary-fixed-variant": "#6b3b01",
+                        "on-primary-fixed-variant": "#004e60",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "secondary": "#5e5e5e",
+                        "inverse-primary": "#86d1ec",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e7e8ea",
+                        "on-primary-container": "#74bfd9",
+                        "background": "#f8f9fb",
+                        "tertiary": "#4a2700",
+                        "text-high-contrast": "#1b1c1c",
+                        "surface-bright": "#f8f9fb",
+                        "surface-container-low": "#f2f4f5",
+                        "surface-background": "#fcf9f8",
+                        "outline": "#70787c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "grid-unit": "40px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "margin-mobile": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "display": ["Hanken Grotesk"],
+                        "label-caps": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .oblique-divider-bottom {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+        .oblique-divider-top {
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+        }
+        .technical-grid {
+            background-image: 
+                linear-gradient(to right, rgba(44, 51, 69, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(44, 51, 69, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-stroke {
+            -webkit-text-stroke: 1px currentColor;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- 1. COMPACT HERO -->
+<section class="relative w-full min-h-[30vh] flex items-center bg-surface-container-low technical-grid border-b border-grid overflow-hidden">
+<div class="px-margin-mobile md:px-margin-desktop py-16 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+<div class="flex-1 space-y-6 z-10">
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">Écosystème SimSoft</span>
+<h1 class="font-headline-lg text-headline-lg text-primary max-w-xl">Ils nous font confiance</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                    Depuis plus de deux décennies, SimSoft Technologies accompagne les acteurs majeurs de l'industrie et du commerce dans leur transformation numérique avec une précision mathématique.
+                </p>
+<div class="pt-4">
+<button class="bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 transition-all hover:bg-primary-container active:scale-95 flex items-center gap-2">
+                        DÉCOUVRIR NOS RÉFÉRENCES
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="flex-1 relative hidden md:block">
+<div class="aspect-square w-full max-w-md ml-auto border-2 border-primary/20 p-4 relative">
+<div class="absolute -top-4 -left-4 w-12 h-12 border-t-2 border-l-2 border-primary"></div>
+<div class="absolute -bottom-4 -right-4 w-12 h-12 border-b-2 border-r-2 border-primary"></div>
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="A sophisticated industrial illustration featuring technical architectural lines, circuit patterns, and abstract geometric blueprints in a clean teal and white aesthetic. The composition is professional, minimalist, and conveys a sense of engineering precision and high-tech software expertise. Soft lighting emphasizes the sharp corners and structural integrity of the digital workspace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAf0NRIM_sQkjZ6plGkfyYijCz3uvGcxL-nAB8c-In1zYTTv9BiKH-9kfu0X76tM3O7G0MqtVjnrwyo_qjqImO9rBH_KocLmq_WkQNwe2eFq3lIyHZKAJGAGpjve5s4af_aZOUe4UGRtKeB-0PglsuElbxWDesNsfaKVD4dOhWm6jAfJH0MibNmbvJaTcBUEOI6PKLoma57kC4fyFC8hIcAUvihhCDiaWyU8zvanbuQEP3w-J58y5N5"/>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. NOS RÉFÉRENCES (LOGO GRID) -->
+<section class="py-24 bg-white">
+<div class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<div class="flex items-baseline gap-4 mb-12">
+<h2 class="font-headline-lg text-headline-lg text-primary">Références</h2>
+<div class="flex-grow h-px bg-border-grid"></div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">24 PARTENAIRES CLÉS</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-0 border-t border-l border-grid">
+<!-- Loop for 24 placeholders -->
+<!-- Creating a representative set that reflects the requested 24 items -->
+<script>
+                    const logoGrid = document.currentScript.parentElement;
+                    for(let i=1; i<=24; i++) {
+                        const div = document.createElement('div');
+                        div.className = "group aspect-video border-r border-b border-grid flex items-center justify-center p-8 bg-surface-container-low hover:bg-white transition-all duration-300 cursor-pointer relative overflow-hidden";
+                        div.innerHTML = `
+                            <div class="absolute inset-0 bg-primary opacity-0 group-hover:opacity-[0.02] transition-opacity"></div>
+                            <img src="placeholder" data-alt="A minimalist professional corporate logo in high-contrast monochrome black or deep teal. The logo design is modern, geometric, and clean, representing a global industrial or technology brand. Centered on a light grey background, the aesthetic is premium and understated, consistent with a high-end corporate identity system." class="w-full h-full object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 scale-90 group-hover:scale-100">
+                        `;
+                        logoGrid.appendChild(div);
+                    }
+                </script>
+</div>
+</div>
+</section>
+<!-- 3. SECTEURS D'ACTIVITÉ -->
+<section class="py-24 bg-surface-container oblique-divider-top oblique-divider-bottom pb-40">
+<div class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto mt-16">
+<div class="text-center mb-16">
+<span class="font-label-caps text-label-caps text-primary tracking-widest">DIVERSITÉ STRATÉGIQUE</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mt-2">Secteurs d'activité</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+<!-- Sector Cards -->
+<div class="bg-surface-container-lowest p-8 border border-grid flex flex-col gap-4 group hover:border-primary transition-all">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="factory">factory</span>
+<h3 class="font-bold text-xl text-primary">Industrie</h3>
+<p class="text-on-surface-variant text-sm">Optimisation des flux de production et gestion de parc machine temps réel.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 border border-grid flex flex-col gap-4 group hover:border-primary transition-all">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="storefront">storefront</span>
+<h3 class="font-bold text-xl text-primary">Commerce</h3>
+<p class="text-on-surface-variant text-sm">Solutions POS connectées et gestion d'inventaire omnicanale.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 border border-grid flex flex-col gap-4 group hover:border-primary transition-all">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="conveyor_belt">conveyor_belt</span>
+<h3 class="font-bold text-xl text-primary">Distribution</h3>
+<p class="text-on-surface-variant text-sm">Intelligence logistique pour les réseaux de distribution nationaux.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 border border-grid flex flex-col gap-4 group hover:border-primary transition-all">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="medical_services">medical_services</span>
+<h3 class="font-bold text-xl text-primary">Santé</h3>
+<p class="text-on-surface-variant text-sm">Gestion sécurisée des données de santé et traçabilité médicale.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 border border-grid flex flex-col gap-4 group hover:border-primary transition-all">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="support_agent">support_agent</span>
+<h3 class="font-bold text-xl text-primary">Services</h3>
+<p class="text-on-surface-variant text-sm">Plateformes collaboratives pour les entreprises de services B2B.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 border border-grid flex flex-col gap-4 group hover:border-primary transition-all">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="account_balance">account_balance</span>
+<h3 class="font-bold text-xl text-primary">Administration</h3>
+<p class="text-on-surface-variant text-sm">Dématérialisation et portails citoyens pour le secteur public.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 border border-grid flex flex-col gap-4 group hover:border-primary transition-all">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="local_shipping">local_shipping</span>
+<h3 class="font-bold text-xl text-primary">Logistique</h3>
+<p class="text-on-surface-variant text-sm">Pilotage de supply chain complexe et suivi de flotte industriel.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 border border-grid flex flex-col gap-4 group hover:border-primary transition-all">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="corporate_fare">corporate_fare</span>
+<h3 class="font-bold text-xl text-primary">PME &amp; Grandes Entreprises</h3>
+<p class="text-on-surface-variant text-sm">ERP sur mesure adaptés à chaque taille de structure.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. TÉMOIGNAGES CLIENTS -->
+<section class="py-32 bg-white relative">
+<div class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-16 text-center">Paroles d'experts</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Testimonial 1 -->
+<div class="flex flex-col gap-8 p-12 bg-surface-container-low relative border border-grid">
+<span class="material-symbols-outlined text-primary/10 text-8xl absolute top-4 right-8 select-none">format_quote</span>
+<p class="font-body-lg text-body-lg text-primary italic leading-relaxed relative z-10">
+                        "L'implémentation du système SimSoft a radicalement transformé notre gestion de production. La précision des données et la réactivité du support technique sont sans équivalent sur le marché."
+                    </p>
+<div class="flex items-center gap-4 border-t border-grid pt-8">
+<div class="w-16 h-16 bg-primary-container rounded-none overflow-hidden">
+<img class="w-full h-full object-cover grayscale" data-alt="A professional portrait of a senior industrial executive in a modern office setting. High-quality corporate photography, soft side lighting, professional attire. The background is a clean, out-of-focus tech environment. The mood is confident and reliable, reflecting success and industrial leadership." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ7hf9DBPDWP0MaXvE4Ti806Yiz94HKZLwU0yFwX2-hGa_U4iGPHvz_HbwaEnwI44tWcwQztXr8r3LD1k2rEJ_bWFRfbh_NJtn7NrIDElGJK_BnbPT_B3q2hgPL-7SR_w6arEYKv3U6EMT8S-f-8k5ijVPtb5kaek-8CENHXi1Oo8_sFBIo-QK9WHHTZmhY95Vaor0QHiNkhbW8qHswy8su9Ga4X57JIK4iszxQqN5UeXPs5EByiBU"/>
+</div>
+<div>
+<p class="font-bold text-primary">Marc-Antoine Valery</p>
+<p class="text-sm text-on-surface-variant">Directeur des Opérations, IndustraGlobal</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="flex flex-col gap-8 p-12 bg-primary text-on-primary relative border border-primary">
+<span class="material-symbols-outlined text-white/10 text-8xl absolute top-4 right-8 select-none">format_quote</span>
+<p class="font-body-lg text-body-lg italic leading-relaxed relative z-10">
+                        "Travailler avec SimSoft, c'est choisir un partenaire qui comprend réellement les enjeux du terrain. Leur solution nous a permis de réduire nos erreurs de stock de 45% en moins de six mois."
+                    </p>
+<div class="flex items-center gap-4 border-t border-white/20 pt-8">
+<div class="w-16 h-16 bg-surface-container rounded-none overflow-hidden">
+<img class="w-full h-full object-cover grayscale" data-alt="A professional studio portrait of a woman in a business leadership role, wearing a smart suit. Bright high-key lighting, minimalist background. The style is modern, sharp, and corporate. Her expression is approachable yet authoritative, representing a satisfied high-level client in the logistics sector." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTs-9f3-ssQj6VtsPjPCCwcc56eAFU0qFP53aIhqyGJtL66HC_ZK99cs75b9e27AusCsqCyI087b9WoWkn5K6SWWChZtA-6eWmc6be5TlXbbcUQjKlEeACLZS3Y1bpChdzd6F6K5Yavj25OKO41i1yHuS-N7B-sVhsnnqt6gFBxeAhEkSO_sirKhjm8MP3eDuAtzKAffEhjwYo_lA31uEUS7Nnj7Ko9nO5bxKx27bq1hC3qR5sE4PT"/>
+</div>
+<div>
+<p class="font-bold">Sophie Morel</p>
+<p class="text-sm opacity-80">Directrice Supply Chain, LogiTrack Solutions</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. SIMSOFT EN QUELQUES CHIFFRES (KPIs) -->
+<section class="py-24 border-y border-grid bg-white technical-grid">
+<div class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+<div class="flex flex-col items-center text-center">
+<span class="font-display text-4xl md:text-5xl text-primary tracking-tighter">20+</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant mt-2">Années d'expertise</span>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="font-display text-4xl md:text-5xl text-primary tracking-tighter">500+</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant mt-2">Clients actifs</span>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="font-display text-4xl md:text-5xl text-primary tracking-tighter">1.2k</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant mt-2">Projets livrés</span>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="font-display text-4xl md:text-5xl text-primary tracking-tighter">45</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant mt-2">Partenaires certifiés</span>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="font-display text-4xl md:text-5xl text-primary tracking-tighter">98%</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant mt-2">Taux de satisfaction</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. NOTRE ENGAGEMENT -->
+<section class="py-32 bg-surface">
+<div class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-center">
+<div class="lg:w-1/2 space-y-10">
+<div class="space-y-4">
+<span class="font-label-caps text-label-caps text-primary">VALEURS FONDAMENTALES</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Pourquoi choisir SimSoft ?</h2>
+</div>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+</div>
+<div>
+<h4 class="font-bold text-primary mb-1">Expertise Métier</h4>
+<p class="text-on-surface-variant">Une compréhension profonde de vos contraintes opérationnelles grâce à nos consultants spécialisés.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="handshake">handshake</span>
+</div>
+<div>
+<h4 class="font-bold text-primary mb-1">Accompagnement de Proximité</h4>
+<p class="text-on-surface-variant">Un support dédié et local pour garantir la continuité de vos activités 24/7.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="lightbulb">lightbulb</span>
+</div>
+<div>
+<h4 class="font-bold text-primary mb-1">Innovation Continue</h4>
+<p class="text-on-surface-variant">R&amp;D permanente pour intégrer les dernières technologies (IoT, IA) de manière pragmatique.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:w-1/2 grid grid-cols-2 gap-4">
+<div class="col-span-2 aspect-[16/7] bg-surface-container border border-grid overflow-hidden">
+<img class="w-full h-full object-cover grayscale brightness-110" data-alt="A wide-angle landscape shot of a modern, high-precision industrial manufacturing facility. The scene is immaculate, with automated robotics and clean surfaces. Cool, bright daylight streams through large industrial windows, emphasizing the teal and white color scheme. The overall image represents the high standard of industry that SimSoft supports." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDawAMVV4SzigEqw9uc69z8D1uhtAsVody9HbzJWgV9nWPVLCUvHFr8TFwxEahddzIvOO_PPT-mgnAk2Qfcpb_CdeqsMs4VJgKp8X6Mw16PIFJQAKaR088Jx0gkOAmJwfW8J3V6itDZJCTpKVvUkgqHUCJ8A8HEw-nE8G1NqlDl9ewdgCU14Ln2cvaGKGijLJe8gj48RXbFFDAjKqeMSNZRh2xfzQNSaozF3ellZbU-KKG39iuopTfj"/>
+</div>
+<div class="aspect-square bg-surface-container-highest border border-grid overflow-hidden">
+<img class="w-full h-full object-cover grayscale" data-alt="Close-up detail of a professional control panel with glowing indicators and precise buttons. The focus is sharp on technical details, conveying industrial precision and reliability. Monochrome aesthetic with a subtle teal tint." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh9Cl6498ra6feSuJbpSMzIVcht7I3n2EpisYLUwjwG6Y1qmwg-lXy8aW7jp6QglLoDHxH2JaKlaQe7FpEjfhKhxc_dRdHYENaog2clCDsuhR8dXAPSj3Slaw3lkWtCbmI60C5gtMAlZ21Ceq048DJg7C1dtFEkFyqVloboEgESyNJwThzWNRIrRFtxZ5ipqgs3XhUJP5B1Dy7wIzBHSkmOxuMwdMZUURK0rzi3F2BOInKAZn0phaU"/>
+</div>
+<div class="aspect-square bg-primary flex items-center justify-center p-8">
+<p class="font-display text-4xl text-white tracking-widest leading-none">PRECISION</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. CALL TO ACTION -->
+<section class="relative bg-primary py-32 overflow-hidden">
+<!-- Background Tech Circles Decoration -->
+<div class="absolute top-0 right-0 w-[500px] h-[500px] border border-white/5 rounded-full -translate-y-1/2 translate-x-1/4"></div>
+<div class="absolute bottom-0 left-0 w-[300px] h-[300px] border border-white/5 rounded-full translate-y-1/2 -translate-x-1/4"></div>
+<div class="px-margin-mobile md:px-margin-desktop max-w-5xl mx-auto text-center relative z-10">
+<h2 class="font-display text-3xl md:text-5xl text-on-primary mb-8 leading-tight">Rejoignez les entreprises qui font confiance à SimSoft Technologies</h2>
+<p class="font-body-lg text-body-lg text-on-primary/70 mb-12 max-w-2xl mx-auto">
+                Prêt à passer à l'étape supérieure de votre transformation industrielle ? Nos experts sont à votre disposition pour une analyse personnalisée de vos besoins.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-surface-container-lowest text-primary font-label-caps text-label-caps px-10 py-5 transition-all hover:bg-white active:scale-95 shadow-xl">
+                    PARLER À UN EXPERT
+                </button>
+<button class="border border-white/30 text-white font-label-caps text-label-caps px-10 py-5 transition-all hover:bg-white/10 active:scale-95">
+                    DEMANDER UNE DÉMO
+                </button>
+</div>
+</div>
+</section>
+<script>
+        // Simple scroll reveal micro-interaction
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-4');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('section > div').forEach(el => {
+                el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-4');
+                observer.observe(el);
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,24 @@
+<header class="fixed top-0 w-full z-50 border-b border-border-grid bg-background/95 backdrop-blur-xl">
+  <div class="flex justify-between items-center w-full px-margin-desktop h-20">
+    <div class="flex items-center gap-4 cursor-pointer hover-scale-dynamic" routerLink="/accueil" appGsapAnimate="slide-rotate">
+      <img src="images/sim-2000.png" alt="Simsoft Technologies Logo" class="h-10 w-auto object-contain">
+      <span class="font-headline-md text-headline-md font-bold tracking-tighter text-text-high-contrast hidden lg:block uppercase">SIMSOFT TECHNOLOGIES</span>
+    </div>
+    <nav class="hidden md:flex items-center gap-10">
+      <a class="font-label-caps text-on-surface-variant transition-colors hover-neon-glow px-3 py-1 rounded" routerLink="/accueil" routerLinkActive="text-primary font-bold">Accueil</a>
+      <a class="font-label-caps text-on-surface-variant transition-colors hover-neon-glow px-3 py-1 rounded" routerLink="/a-propos" routerLinkActive="text-primary font-bold">À Propos</a>
+      <a class="font-label-caps text-on-surface-variant transition-colors hover-neon-glow px-3 py-1 rounded" routerLink="/services" routerLinkActive="text-primary font-bold">Services</a>
+      <a class="font-label-caps text-on-surface-variant transition-colors hover-neon-glow px-3 py-1 rounded" routerLink="/produits" routerLinkActive="text-primary font-bold">Produits</a>
+      <a class="font-label-caps text-on-surface-variant transition-colors hover-neon-glow px-3 py-1 rounded" routerLink="/references" routerLinkActive="text-primary font-bold">Références</a>
+      <a class="font-label-caps text-on-surface-variant transition-colors hover-neon-glow px-3 py-1 rounded" routerLink="/blog" routerLinkActive="text-primary font-bold">Blog</a>
+    </nav>
+    <div class="flex items-center gap-8">
+      <button (click)="toggleTheme()" class="p-2 text-on-surface-variant transition-colors flex items-center justify-center hover-cyber-glitch" aria-label="Basculer le thème">
+        <span class="material-symbols-outlined">{{ isDarkMode ? 'dark_mode' : 'light_mode' }}</span>
+      </button>
+      <button routerLink="/accueil" class="bg-primary text-white font-label-caps px-8 py-3 hover-neon-glow active:scale-95" appGsapAnimate="zoom-3d">
+        DÉMARRER
+      </button>
+    </div>
+  </div>
+</header>
