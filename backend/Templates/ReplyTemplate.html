@@ -1,0 +1,457 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Réponse à votre message</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Hanken+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ===========================
+       RESET & BASE
+    =========================== */
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f0eded;
+      font-family: 'Inter', Arial, sans-serif;
+      color: #1b1c1c;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+    table { border-collapse: collapse; }
+    img {
+      border: 0;
+      outline: none;
+      text-decoration: none;
+      -ms-interpolation-mode: bicubic;
+    }
+    a { color: #00677f; }
+
+    /* ===========================
+       WRAPPER PRINCIPAL
+    =========================== */
+    .email-wrapper {
+      width: 100%;
+      background-color: #f0eded;
+      padding: 40px 16px;
+    }
+    .email-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border: 1px solid rgba(44, 51, 69, 0.15);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    /* ===========================
+       EN-TÊTE
+    =========================== */
+    .header {
+      background-color: #00677f;
+      padding: 32px 40px;
+      text-align: center;
+    }
+    .header img {
+      max-width: 160px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    .header-divider {
+      width: 40px;
+      height: 2px;
+      background-color: rgba(255,255,255,0.3);
+      margin: 20px auto 16px auto;
+    }
+    .header h1 {
+      color: #ffffff;
+      font-family: 'Hanken Grotesk', Arial, sans-serif;
+      font-size: 22px;
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+    }
+    .header-subtitle {
+      color: rgba(255,255,255,0.75);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+      margin-top: 6px;
+    }
+
+    /* ===========================
+       BADGE (INGÉNIERIE DEPUIS 2000)
+    =========================== */
+    .badge-row {
+      background-color: #004e60;
+      padding: 10px 40px;
+      text-align: center;
+    }
+    .badge-row span {
+      color: rgba(255,255,255,0.6);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 600;
+    }
+
+    /* ===========================
+       CONTENU
+    =========================== */
+    .content {
+      padding: 40px 40px 32px 40px;
+    }
+    .greeting {
+      font-size: 18px;
+      line-height: 28px;
+      color: #1b1c1c;
+      margin-bottom: 12px;
+      font-family: 'Hanken Grotesk', Arial, sans-serif;
+      font-weight: 700;
+    }
+    .content p {
+      font-size: 15px;
+      line-height: 24px;
+      color: #3c494e;
+      margin: 0 0 16px 0;
+    }
+    .label-caps {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #00566a;
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    /* ===========================
+       BOITE MOT DE PASSE
+    =========================== */
+    .password-box {
+      background-color: #e8f4f6;
+      border-left: 4px solid #00677f;
+      padding: 20px 24px;
+      margin: 24px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    .password-box .password-label {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #00566a;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .password-box .password-value {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 22px;
+      color: #001f28;
+      letter-spacing: 3px;
+      font-weight: bold;
+      word-break: break-all;
+    }
+    .password-note {
+      font-size: 12px;
+      color: #5d6478;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    /* ===========================
+       ÉTAPES (SECTION INFO)
+    =========================== */
+    .steps-section {
+      background-color: #fcf9f8;
+      border: 1px solid rgba(44, 51, 69, 0.1);
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .steps-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1b1c1c;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #3c494e;
+      line-height: 20px;
+    }
+    .step-num {
+      background-color: #00677f;
+      color: #ffffff;
+      font-size: 10px;
+      font-weight: 700;
+      width: 18px;
+      min-width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: inline-block;
+      text-align: center;
+      line-height: 18px;
+      margin-right: 10px;
+      margin-top: 1px;
+    }
+
+    /* ===========================
+       BOUTON D'ACTION
+    =========================== */
+    .btn-container {
+      text-align: center;
+      margin: 32px 0 24px 0;
+    }
+    .action-button {
+      display: inline-block;
+      background-color: #00677f;
+      color: #ffffff !important;
+      text-decoration: none;
+      padding: 16px 40px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border-radius: 0;
+      font-family: 'Inter', Arial, sans-serif;
+    }
+    .action-button:hover {
+      background-color: #004e60;
+    }
+
+    /* ===========================
+       ALERTE AVERTISSEMENT
+    =========================== */
+    .warning-box {
+      border: 1px solid #ffaca5;
+      background-color: #fff4f4;
+      border-radius: 4px;
+      padding: 14px 18px;
+      margin-top: 24px;
+    }
+    .warning-box p {
+      font-size: 13px;
+      color: #93000a;
+      font-weight: 500;
+      margin: 0;
+      line-height: 20px;
+    }
+
+    /* ===========================
+       PIED DE PAGE
+    =========================== */
+    .footer {
+      background-color: #1b1c1c;
+      padding: 28px 40px;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Hanken Grotesk', Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+    .footer-tagline {
+      color: rgba(255,255,255,0.5);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-top: 6px;
+    }
+    .footer-divider {
+      width: 40px;
+      height: 1px;
+      background-color: rgba(255,255,255,0.2);
+      margin: 16px auto;
+    }
+    .footer-legal {
+      color: rgba(255,255,255,0.35);
+      font-size: 11px;
+      line-height: 18px;
+    }
+
+    /* ===========================
+       RESPONSIVE MOBILE
+    =========================== */
+    @media only screen and (max-width: 600px) {
+      .email-wrapper {
+        padding: 0 !important;
+      }
+      .email-container {
+        border-radius: 0 !important;
+        border-left: none !important;
+        border-right: none !important;
+        border-top: none !important;
+      }
+      .header {
+        padding: 24px 20px !important;
+      }
+      .header img {
+        max-width: 120px !important;
+      }
+      .header h1 {
+        font-size: 18px !important;
+      }
+      .badge-row {
+        padding: 10px 20px !important;
+      }
+      .content {
+        padding: 28px 20px 24px 20px !important;
+      }
+      .greeting {
+        font-size: 16px !important;
+      }
+      .password-box {
+        padding: 16px 16px !important;
+      }
+      .password-box .password-value {
+        font-size: 16px !important;
+        letter-spacing: 2px !important;
+      }
+      .steps-section {
+        padding: 16px !important;
+      }
+      .action-button {
+        padding: 14px 24px !important;
+        font-size: 12px !important;
+        display: block !important;
+        text-align: center !important;
+      }
+      .footer {
+        padding: 24px 20px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="email-wrapper">
+    <div class="email-container">
+
+      <!-- ========================
+           EN-TÊTE
+      ========================= -->
+      <div class="header">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_MwEFyrpqtGH2FUWX7Wz0C0mH7tiLUIw7C2LYC7vVhQ&s=10" alt="Simsoft Technologies">
+        <div class="header-divider"></div>
+        <h1>Réponse à votre demande</h1>
+        <div class="header-subtitle">Plateforme de gestion administrative</div>
+      </div>
+
+      <!-- BADGE -->
+      <div class="badge-row">
+        <span>&#x2714;&nbsp; Ingénierie de haute précision &nbsp;•&nbsp; Depuis 2000</span>
+      </div>
+
+      <!-- ========================
+           CONTENU
+      ========================= -->
+      <div class="content">
+        <p class="greeting">Bonjour {{VisitorName}},</p>
+
+        <p>Suite à votre demande concernant : <strong>{{Subject}}</strong>, voici la réponse de notre équipe :</p>
+
+        <div class="password-box" style="border-left-color: #059669; background-color: #f0fdf4;">
+          <div style="font-size: 14px; line-height: 24px; color: #3c494e;">
+            {{MessageBody}}
+          </div>
+        </div>
+
+        <p>Si vous avez d'autres questions, n'hésitez pas à nous contacter. Nous sommes là pour vous aider.</p>
+        
+        <div class="btn-container">
+          <a href="http://localhost:4200/" class="action-button">Retourner au site</a>
+        </div>
+      </div>
+
+      <!-- ========================
+           EN-TÊTE
+      ========================= -->
+      <div class="header">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_MwEFyrpqtGH2FUWX7Wz0C0mH7tiLUIw7C2LYC7vVhQ&s=10" alt="Simsoft Technologies">
+        <div class="header-divider"></div>
+        <h1>Réponse à votre demande</h1>
+        <div class="header-subtitle">Plateforme de gestion administrative</div>
+      </div>
+
+      <!-- BADGE -->
+      <div class="badge-row">
+        <span>&#x2714;&nbsp; Ingénierie de haute précision &nbsp;•&nbsp; Depuis 2000</span>
+      </div>
+
+      <!-- ========================
+           CONTENU
+      ========================= -->
+      <div class="content">
+        <p class="greeting">Bonjour {{to_name}},</p>
+
+        <p>Un compte administrateur a été créé pour vous sur la plateforme de gestion interne Simsoft. Vous trouverez ci-dessous vos identifiants de première connexion.</p>
+
+        <span class="label-caps">&#x1F511;&nbsp; Vos identifiants temporaires</span>
+
+        <!-- BOITE MOT DE PASSE -->
+        <div class="password-box">
+          <span class="password-label">Mot de passe temporaire</span>
+          <div class="password-value">{{temp_password}}</div>
+          <p class="password-note">Ce mot de passe est à usage unique. Il vous sera demandé de le modifier à la première connexion.</p>
+        </div>
+
+        <!-- ÉTAPES -->
+        <div class="steps-section">
+          <div class="steps-title">Comment se connecter ?</div>
+          <div class="step-item">
+            <span class="step-num">1</span>
+            <span>Cliquez sur le bouton "Se connecter" ci-dessous.</span>
+          </div>
+          <div class="step-item">
+            <span class="step-num">2</span>
+            <span>Entrez votre adresse e-mail <strong>{{to_email}}</strong> et le mot de passe temporaire fourni.</span>
+          </div>
+          <div class="step-item">
+            <span class="step-num">3</span>
+            <span>Créez un nouveau mot de passe sécurisé pour sécuriser votre compte.</span>
+          </div>
+        </div>
+
+        <!-- BOUTON D'ACTION -->
+        <div class="btn-container">
+          <a href="{{login_url}}" class="action-button">Se connecter maintenant</a>
+        </div>
+
+        <!-- AVERTISSEMENT -->
+        <div class="warning-box">
+          <p>&#x26A0;&nbsp; Si vous n'êtes pas à l'origine de cette demande ou si vous pensez avoir reçu cet e-mail par erreur, veuillez contacter immédiatement l'assistance technique Simsoft.</p>
+        </div>
+      </div>
+
+      <!-- ========================
+           PIED DE PAGE
+      ========================= -->
+      <div class="footer">
+        <div class="footer-logo">Simsoft Technologies</div>
+        <div class="footer-tagline">Ingénierie de haute précision</div>
+        <div class="footer-divider"></div>
+        <div class="footer-legal">
+          &copy; 2026 Simsoft Technologies. Tous droits réservés.<br>
+          Ce message a été envoyé automatiquement, merci de ne pas y répondre directement.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
+
